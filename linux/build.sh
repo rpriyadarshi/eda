@@ -31,7 +31,7 @@ run_usage() {
 	echo " This utility must be run from the directory which has CMakeLists.txt"
 	echo "Usage:"
 	echo "    -c|--config <Debug|Release>           Choose build config"
-	echo "    -t|--target <getdep|googletest|jsoncpp|generate|compile|clean>"
+	echo "    -t|--target <getdep|googletest|jsoncpp|genscript|generate|compile|clean>"
 	echo "                                          Resolve dependencies, makefiles,"
 	echo "                                          compie build or"
 	echo "                                          clean build"
@@ -42,6 +42,7 @@ run_usage() {
 	echo "    ${PROG} --config Debug --target googletest"
 	echo "    ${PROG} --config Debug --target jsoncpp"
 	echo "    ${PROG} --config Debug --target swig"
+	echo "    ${PROG} --config Debug --target genscript"
 	echo "    ${PROG} --config Debug --target generate"
 	echo "    ${PROG} --config Debug --target compile"
 	echo "    ${PROG} --config Debug --target compile --parallel 4"
@@ -59,6 +60,7 @@ set_dependency_paths() {
 	export GOOGLEMOCK_NAME=googlemock
 	export JSONCPP_NAME=jsoncpp
 	export SWIG_NAME=swig
+	export LIB_PATHS=lib_paths.sh
 
 	export GTEST_DIR=${BUILD_ROOT}/${LIBS_NAME}/${GOOGLETEST_NAME}
 	export JSONCPP_DIR=${BUILD_ROOT}/${LIBS_NAME}/${JSONCPP_NAME}
@@ -214,6 +216,8 @@ check_values() {
 		JSONCPP=1
 	elif [ "${TARGET}" = "swig" ]; then
 		SWIG=1
+	elif [ "${TARGET}" = "genscript" ]; then
+		GENSCRIPT=1
 	elif [ "${TARGET}" = "generate" ]; then
 		GENERATE=1
 	elif [ "${TARGET}" = "compile" ]; then
@@ -248,6 +252,7 @@ dump_vars() {
 	echo "GOOGLETEST=${GOOGLETEST}"
 	echo "JSONCPP=${JSONCPP}"
 	echo "SWIG=${SWIG}"
+	echo "GENSCRIPT=${GENSCRIPT}"
 	echo "GENERATE=${GENERATE}"
 	echo "COMPILE=${COMPILE}"
 	echo "CLEAN=${CLEAN}"
@@ -268,22 +273,25 @@ set_compile_paths() {
 }
 
 ################################################################################
-# Dump paths
+# generate path script
 ################################################################################
-dump_paths() {
-	echo "Googletest Paths:"
-	echo "    ${GTEST_DIR}/${BUILD_NAME}/${CONFIG}/lib"
-	echo "    ${GTEST_DIR}/${GOOGLETEST_NAME}/include"
-	echo "    ${GTEST_DIR}/${GOOGLEMOCK_NAME}/include"
-	echo "JSONCPP Paths:"
-	echo "    ${JSONCPP_DIR}/${BUILD_NAME}/${CONFIG}"
-	echo "Swig Paths:"
-	echo "    ${SWIG_DIR}/lib/bin"
-	echo "Please set:"
-	echo "    export PATH=\${PATH}:${SWIG_DIR}/lib/bin"
-	echo "    export C_INCLUDE_PATH=${GTEST_DIR}/${GOOGLETEST_NAME}/include:${GTEST_DIR}/${GOOGLEMOCK_NAME}/include:${JSONCPP_DIR}/include"
-	echo "    export CPLUS_INCLUDE_PATH=${GTEST_DIR}/${GOOGLETEST_NAME}/include:${GTEST_DIR}/${GOOGLEMOCK_NAME}/include:${JSONCPP_DIR}/include"
-	echo "    export LIBRARY_PATH=${GTEST_DIR}/${BUILD_NAME}/${CONFIG}/lib:${JSONCPP_DIR}/${BUILD_NAME}/${CONFIG}/lib"
+run_genscript() {
+	echo "Wrote script ${LIB_PATHS} that you can source to set paths."
+	echo "
+# Googletest Paths:
+#     ${GTEST_DIR}/${BUILD_NAME}/${CONFIG}/lib
+#     ${GTEST_DIR}/${GOOGLETEST_NAME}/include
+#     ${GTEST_DIR}/${GOOGLEMOCK_NAME}/include
+# JSONCPP Paths:
+#     ${JSONCPP_DIR}/${BUILD_NAME}/${CONFIG}
+# Swig Paths:
+#     ${SWIG_DIR}/lib/bin
+# Please set:
+export PATH=\${PATH}:${SWIG_DIR}/lib/bin
+export C_INCLUDE_PATH=${GTEST_DIR}/${GOOGLETEST_NAME}/include:${GTEST_DIR}/${GOOGLEMOCK_NAME}/include:${JSONCPP_DIR}/include
+export CPLUS_INCLUDE_PATH=${GTEST_DIR}/${GOOGLETEST_NAME}/include:${GTEST_DIR}/${GOOGLEMOCK_NAME}/include:${JSONCPP_DIR}/include
+export LIBRARY_PATH=${GTEST_DIR}/${BUILD_NAME}/${CONFIG}/lib:${JSONCPP_DIR}/${BUILD_NAME}/${CONFIG}/lib
+" > ${LIB_PATHS}
 }
 
 ################################################################################
@@ -301,6 +309,8 @@ run_func() {
 		build_jsoncpp ${CONFIG}
 	elif [ ${SWIG} -eq 1 ]; then
 		build_swig ${CONFIG}
+	elif [ ${GENSCRIPT} -eq 1 ]; then
+		run_genscript ${CONFIG}
 	elif [ ${GENERATE} -eq 1 ]; then
 		set_compile_paths
 		run_generate ${CONFIG}
@@ -321,7 +331,6 @@ main() {
 	check_values
 	# dump_vars
 	run_func
-	# dump_paths
 }
 
 ################################################################################
@@ -331,6 +340,7 @@ GETDEP=0
 GOOGLETEST=0
 JSONCPP=0
 SWIG=0
+GENSCRIPT=0
 GENERATE=0
 COMPILE=0
 CLEAN=0

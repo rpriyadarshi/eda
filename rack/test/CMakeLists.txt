@@ -23,15 +23,17 @@
 
 cmake_minimum_required(VERSION 3.15)
 
+set(UNIT_TEST racktest)
+
 # set the project name and version
-project(racktest VERSION 1.0)
+project(${UNIT_TEST} VERSION 1.0)
 
 # add the executable
-add_executable(racktest test.cpp)
+add_executable(${UNIT_TEST} test.cpp)
 
-target_link_libraries(racktest pthread jsoncpp gtest gtest_main)
+target_link_libraries(${UNIT_TEST} pthread jsoncpp gtest gtest_main)
 
-target_include_directories(racktest PUBLIC
+target_include_directories(${UNIT_TEST} PUBLIC
     ../../cmn/include
     ../../utl/include
     ../../tmat/include
@@ -40,6 +42,19 @@ target_include_directories(racktest PUBLIC
     ../../rack/include
 )
 
-add_custom_command(TARGET racktest POST_BUILD
-    COMMAND racktest
+# add_custom_command(TARGET ${UNIT_TEST} POST_BUILD
+#     COMMAND ${UNIT_TEST}
+# )
+
+add_test(NAME ${UNIT_TEST} COMMAND ${UNIT_TEST})
+add_custom_target(run_${UNIT_TEST} #ALL
+    COMMAND ${UNIT_TEST} --output-on-failure
+    DEPENDS ${UNIT_TEST}
 )
+
+# add_custom_target(run_${UNIT_TEST} #ALL
+#         DEPENDS RunUnitTests.touch ${UNIT_TEST}
+# )
+# add_custom_command(OUTPUT RunUnitTests.touch
+#         COMMAND ${UNIT_TEST}
+# )

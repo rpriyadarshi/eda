@@ -23,19 +23,34 @@
 
 cmake_minimum_required(VERSION 3.15)
 
+set(UNIT_TEST utltest)
+
 # set the project name and version
-project(utltest VERSION 1.0)
+project(${UNIT_TEST} VERSION 1.0)
 
 # add the executable
-add_executable(utltest test.cpp)
+add_executable(${UNIT_TEST} test.cpp)
 
-target_link_libraries(utltest pthread jsoncpp gtest gtest_main)
+target_link_libraries(${UNIT_TEST} pthread jsoncpp gtest gtest_main)
 
-target_include_directories(utltest PUBLIC
+target_include_directories(${UNIT_TEST} PUBLIC
     ../../cmn/include
     ../../utl/include
 )
 
-add_custom_command(TARGET utltest POST_BUILD
-    COMMAND utltest
+# add_custom_command(TARGET utltest POST_BUILD
+#     COMMAND ${UNIT_TEST}
+# )
+
+add_test(NAME ${UNIT_TEST} COMMAND ${UNIT_TEST})
+add_custom_target(run_${UNIT_TEST} #ALL
+    COMMAND ${UNIT_TEST} --output-on-failure
+    DEPENDS ${UNIT_TEST}
 )
+
+# add_custom_target(run_${UNIT_TEST} #ALL
+#         DEPENDS RunUnitTests.touch ${UNIT_TEST}
+# )
+# add_custom_command(OUTPUT RunUnitTests.touch
+#         COMMAND ${UNIT_TEST}
+# )

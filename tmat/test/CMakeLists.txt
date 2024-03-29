@@ -23,20 +23,35 @@
 
 cmake_minimum_required(VERSION 3.15)
 
+set(UNIT_TEST tmattest)
+
 # set the project name and version
-project(tmattest VERSION 1.0)
+project(${UNIT_TEST} VERSION 1.0)
 
 # add the executable
-add_executable(tmattest test.cpp)
+add_executable(${UNIT_TEST} test.cpp)
 
-target_link_libraries(tmattest tmatlib pthread jsoncpp gtest gtest_main)
+target_link_libraries(${UNIT_TEST} tmatlib pthread jsoncpp gtest gtest_main)
 
-target_include_directories(tmattest PUBLIC
+target_include_directories(${UNIT_TEST} PUBLIC
     ../../cmn/include
     ../../utl/include
     ../../tmat/include
 )
 
-add_custom_command(TARGET tmattest POST_BUILD
-    COMMAND tmattest
+# add_custom_command(TARGET ${UNIT_TEST} POST_BUILD
+#     COMMAND ${UNIT_TEST}
+# )
+
+add_test(NAME ${UNIT_TEST} COMMAND ${UNIT_TEST})
+add_custom_target(run_${UNIT_TEST} #ALL
+    COMMAND ${UNIT_TEST} --output-on-failure
+    DEPENDS ${UNIT_TEST}
 )
+
+# add_custom_target(run_${UNIT_TEST} #ALL
+#         DEPENDS RunUnitTests.touch ${UNIT_TEST}
+# )
+# add_custom_command(OUTPUT RunUnitTests.touch
+#         COMMAND ${UNIT_TEST}
+# )
