@@ -23,6 +23,15 @@
 
 cmake_minimum_required(VERSION 3.15)
 
+set(LIB_NAME pyutl)
+set(PY_UNIT_TEST pyutlpytest)
+set(PY_UNIT_TEST_CMD python test.py)
+set(PY_DEBUG_TEST pyutlpydebug)
+set(PY_DEBUG_TEST_CMD python debug.py)
+
+set(UNIT_TEST pyutltest)
+set(UNIT_TEST_CMD pyutltest)
+
 # set the project name
 project(edaint VERSION 1.0
     DESCRIPTION "EDA command interfaces"
@@ -39,15 +48,15 @@ find_package(Python3 COMPONENTS Interpreter Development)
 
 set_property(SOURCE utl_int.i PROPERTY CPLUSPLUS ON)
 #set_property(SOURCE utl_int.i PROPERTY SWIG_FLAGS "-builtin")
-set_property(SOURCE utl_int.i PROPERTY SWIG_MODULE_NAME pyutl)
+set_property(SOURCE utl_int.i PROPERTY SWIG_MODULE_NAME ${LIB_NAME})
 
-swig_add_library(pyutl
+swig_add_library(${LIB_NAME}
     TYPE SHARED
     LANGUAGE python
     SOURCES utl_int.i
 )
 
-target_include_directories(pyutl PUBLIC
+target_include_directories(${LIB_NAME} PUBLIC
     ${Python3_INCLUDE_DIRS}
     ../../cmn/include
     ../../utl/include
@@ -57,41 +66,68 @@ target_include_directories(pyutl PUBLIC
     ../../utl/interface
 )
 
-set_property(TARGET pyutl PROPERTY SWIG_USE_TARGET_INCLUDE_DIRECTORIES ON)
+set_property(TARGET ${LIB_NAME} PROPERTY SWIG_USE_TARGET_INCLUDE_DIRECTORIES ON)
 
-swig_link_libraries(pyutl PUBLIC
+swig_link_libraries(${LIB_NAME} PUBLIC
     jsoncpp
     ${Python3_LIBRARIES}
 )
 
-add_custom_command(TARGET pyutl POST_BUILD
+add_custom_command(TARGET ${LIB_NAME} POST_BUILD
     # Useful when the platform does not support linking
-#    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/test.py $<TARGET_FILE_DIR:pyutl>/.
-#    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/debug.py $<TARGET_FILE_DIR:pyutl>/.
-#    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE_DIR:pyutl>/pyutl.py ${CMAKE_CURRENT_SOURCE_DIR}/.
-#    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE_DIR:pyutl>/_pyutl.so ${CMAKE_CURRENT_SOURCE_DIR}/.
+#    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/test.py $<TARGET_FILE_DIR:${LIB_NAME}>/.
+#    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/debug.py $<TARGET_FILE_DIR:${LIB_NAME}>/.
+#    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE_DIR:${LIB_NAME}>/${LIB_NAME}.py ${CMAKE_CURRENT_SOURCE_DIR}/.
+#    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE_DIR:${LIB_NAME}>/_${LIB_NAME}.so ${CMAKE_CURRENT_SOURCE_DIR}/.
     #https://stackoverflow.com/questions/35765106/symbolic-links-cmake
-    COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/test.py $<TARGET_FILE_DIR:pyutl>/test.py
-    COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/debug.py $<TARGET_FILE_DIR:pyutl>/debug.py
-    COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_DIR:pyutl>/pyutl.py ${CMAKE_CURRENT_SOURCE_DIR}/pyutl.py
-    COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_DIR:pyutl>/_pyutl.so ${CMAKE_CURRENT_SOURCE_DIR}/_pyutl.so
-
-    COMMAND python test.py
-    COMMAND python debug.py
+    COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/test.py $<TARGET_FILE_DIR:${LIB_NAME}>/test.py
+    COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/debug.py $<TARGET_FILE_DIR:${LIB_NAME}>/debug.py
+    COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_DIR:${LIB_NAME}>/${LIB_NAME}.py ${CMAKE_CURRENT_SOURCE_DIR}/${LIB_NAME}.py
+    COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_DIR:${LIB_NAME}>/_${LIB_NAME}.so ${CMAKE_CURRENT_SOURCE_DIR}/_${LIB_NAME}.so
 )
 
-# Python run executable
-add_executable(pyutltest test.cpp)
+# add_custom_command(TARGET ${LIB_NAME} POST_BUILD
+#     COMMAND ${PY_UNIT_TEST_CMD}
+# )
 
-target_include_directories(pyutltest PUBLIC
+add_custom_target(run_${PY_UNIT_TEST} #ALL
+    DEPENDS RunPyUnitTests.touch ${LIB_NAME}
+)
+add_custom_command(OUTPUT RunPyUnitTests.touch
+    COMMAND ${PY_UNIT_TEST_CMD}
+)
+
+# add_custom_command(TARGET ${LIB_NAME} POST_BUILD
+#     COMMAND ${PY_DEBUG_TEST_CMD}
+# )
+
+add_custom_target(run_${PY_DEBUG_TEST} #ALL
+    DEPENDS RunPyDebugTests.touch ${LIB_NAME}
+)
+add_custom_command(OUTPUT RunPyDebugTests.touch
+    COMMAND ${PY_DEBUG_TEST_CMD}
+)
+
+
+# Python run executable
+add_executable(${UNIT_TEST} test.cpp)
+
+target_include_directories(${UNIT_TEST} PUBLIC
     ${Python3_INCLUDE_DIRS}
 )
 
-target_link_libraries(pyutltest ${Python3_LIBRARIES} pthread gtest gtest_main)
+target_link_libraries(${UNIT_TEST} ${Python3_LIBRARIES} pthread gtest gtest_main)
 
-add_dependencies(pyutltest pyutl)
+add_dependencies(${UNIT_TEST} ${LIB_NAME})
 
 # https://gitlab.com/inorton/cmake-custom-concurrency
-add_custom_command(TARGET pyutltest POST_BUILD
-    COMMAND pyutltest
+# add_custom_command(TARGET ${UNIT_TEST} POST_BUILD
+#     COMMAND ${UNIT_TEST_CMD}
+# )
+
+add_custom_target(run_${UNIT_TEST} #ALL
+    DEPENDS RunUnitTests.touch ${UNIT_TEST}
+)
+add_custom_command(OUTPUT RunUnitTests.touch
+    COMMAND ${UNIT_TEST_CMD}
 )

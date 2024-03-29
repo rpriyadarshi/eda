@@ -23,6 +23,10 @@
 
 cmake_minimum_required(VERSION 3.15)
 
+set(LIB_NAME pyrack)
+set(PY_UNIT_TEST pyrackpytest)
+set(PY_UNIT_TEST_CMD python test.py)
+
 # set the project name
 project(edaint VERSION 1.0
     DESCRIPTION "EDA command interfaces"
@@ -39,15 +43,15 @@ find_package(Python3 COMPONENTS Interpreter Development)
 
 set_property(SOURCE rack_int.i PROPERTY CPLUSPLUS ON)
 #set_property(SOURCE rack_int.i PROPERTY SWIG_FLAGS "-builtin")
-set_property(SOURCE rack_int.i PROPERTY SWIG_MODULE_NAME pyrack)
+set_property(SOURCE rack_int.i PROPERTY SWIG_MODULE_NAME ${LIB_NAME})
 
-swig_add_library(pyrack
+swig_add_library(${LIB_NAME}
     TYPE SHARED
     LANGUAGE python
     SOURCES rack_int.i
 )
 
-target_include_directories(pyrack PUBLIC
+target_include_directories(${LIB_NAME} PUBLIC
     ${Python3_INCLUDE_DIRS}
     ../../cmn/include
     ../../utl/include
@@ -63,21 +67,31 @@ target_include_directories(pyrack PUBLIC
     ../../algo/interface
 )
 
-set_property(TARGET pyrack PROPERTY SWIG_USE_TARGET_INCLUDE_DIRECTORIES ON)
+set_property(TARGET ${LIB_NAME} PROPERTY SWIG_USE_TARGET_INCLUDE_DIRECTORIES ON)
 
-swig_link_libraries(pyrack PUBLIC
+swig_link_libraries(${LIB_NAME} PUBLIC
     jsoncpp
     ${Python3_LIBRARIES}
 )
 
-add_custom_command(TARGET pyrack POST_BUILD
+add_custom_command(TARGET ${LIB_NAME} POST_BUILD
     # Useful when the platform does not support linking
-#    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/test.py $<TARGET_FILE_DIR:pyrack>/.
-#    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE_DIR:pyrack>/pyrack.py ${CMAKE_CURRENT_SOURCE_DIR}/.
-#    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE_DIR:pyrack>/_pyrack.so ${CMAKE_CURRENT_SOURCE_DIR}/.
+#    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/test.py $<TARGET_FILE_DIR:${LIB_NAME}>/.
+#    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE_DIR:${LIB_NAME}>/${LIB_NAME}.py ${CMAKE_CURRENT_SOURCE_DIR}/.
+#    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE_DIR:${LIB_NAME}>/_${LIB_NAME}.so ${CMAKE_CURRENT_SOURCE_DIR}/.
     #https://stackoverflow.com/questions/35765106/symbolic-links-cmake
-    COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/test.py $<TARGET_FILE_DIR:pyrack>/test.py
-    COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_DIR:pyrack>/pyrack.py ${CMAKE_CURRENT_SOURCE_DIR}/pyrack.py
-    COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_DIR:pyrack>/_pyrack.so ${CMAKE_CURRENT_SOURCE_DIR}/_pyrack.so
-    COMMAND python test.py
+    COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/test.py $<TARGET_FILE_DIR:${LIB_NAME}>/test.py
+    COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_DIR:${LIB_NAME}>/${LIB_NAME}.py ${CMAKE_CURRENT_SOURCE_DIR}/${LIB_NAME}.py
+    COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_DIR:${LIB_NAME}>/_${LIB_NAME}.so ${CMAKE_CURRENT_SOURCE_DIR}/_${LIB_NAME}.so
+)
+
+# add_custom_command(TARGET ${LIB_NAME} POST_BUILD
+#     COMMAND ${PY_UNIT_TEST_CMD}
+# )
+
+add_custom_target(run_${PY_UNIT_TEST} #ALL
+    DEPENDS RunUnitTests.touch ${LIB_NAME}
+)
+add_custom_command(OUTPUT RunUnitTests.touch
+    COMMAND ${PY_UNIT_TEST_CMD}
 )

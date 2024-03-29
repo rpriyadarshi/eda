@@ -24,6 +24,7 @@
 cmake_minimum_required(VERSION 3.15)
 
 set(UNIT_TEST utltest)
+set(UNIT_TEST_CMD utltest)
 
 # set the project name and version
 project(${UNIT_TEST} VERSION 1.0)
@@ -39,18 +40,12 @@ target_include_directories(${UNIT_TEST} PUBLIC
 )
 
 # add_custom_command(TARGET utltest POST_BUILD
-#     COMMAND ${UNIT_TEST}
+#     COMMAND ${UNIT_TEST_CMD}
 # )
 
-add_test(NAME ${UNIT_TEST} COMMAND ${UNIT_TEST})
 add_custom_target(run_${UNIT_TEST} #ALL
-    COMMAND ${UNIT_TEST} --output-on-failure
-    DEPENDS ${UNIT_TEST}
+    DEPENDS RunUnitTests.touch ${UNIT_TEST}
 )
-
-# add_custom_target(run_${UNIT_TEST} #ALL
-#         DEPENDS RunUnitTests.touch ${UNIT_TEST}
-# )
-# add_custom_command(OUTPUT RunUnitTests.touch
-#         COMMAND ${UNIT_TEST}
-# )
+add_custom_command(OUTPUT RunUnitTests.touch
+    COMMAND ${UNIT_TEST_CMD}
+)

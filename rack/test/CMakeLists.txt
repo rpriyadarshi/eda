@@ -24,6 +24,7 @@
 cmake_minimum_required(VERSION 3.15)
 
 set(UNIT_TEST racktest)
+set(UNIT_TEST_CMD racktest)
 
 # set the project name and version
 project(${UNIT_TEST} VERSION 1.0)
@@ -43,18 +44,12 @@ target_include_directories(${UNIT_TEST} PUBLIC
 )
 
 # add_custom_command(TARGET ${UNIT_TEST} POST_BUILD
-#     COMMAND ${UNIT_TEST}
+#     COMMAND ${UNIT_TEST_CMD}
 # )
 
-add_test(NAME ${UNIT_TEST} COMMAND ${UNIT_TEST})
 add_custom_target(run_${UNIT_TEST} #ALL
-    COMMAND ${UNIT_TEST} --output-on-failure
-    DEPENDS ${UNIT_TEST}
+    DEPENDS RunUnitTests.touch ${UNIT_TEST}
 )
-
-# add_custom_target(run_${UNIT_TEST} #ALL
-#         DEPENDS RunUnitTests.touch ${UNIT_TEST}
-# )
-# add_custom_command(OUTPUT RunUnitTests.touch
-#         COMMAND ${UNIT_TEST}
-# )
+add_custom_command(OUTPUT RunUnitTests.touch
+    COMMAND ${UNIT_TEST_CMD}
+)
