@@ -191,9 +191,17 @@ TEST(compileTest, multistring)
 TEST(basicTest, multistring)
 {
     utl::multistring ms;
-    ms += std::string("Hello");
-    ms += std::string(", ");
-    ms += std::string("World!");
+    // You cannot have temporary strings as these are saved by reference in multistring
+    // ms += std::string("Hello");
+    // ms += std::string(", ");
+    // ms += std::string("World!");
+    std::string s0("Hello");
+    std::string s1(", ");
+    std::string s2("World!");
+    ms += s0;
+    ms += s1;
+    ms += s2;
+
     std::stringstream ss;
     ss << ms << std::ends;
     EXPECT_STREQ("Hello, World!", ss.str().c_str());
