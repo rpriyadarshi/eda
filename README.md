@@ -24,19 +24,19 @@ cmake --build . --config Debug --target clean --
 # Google Test
 ## Clone Google Test
 ```
-export GTEST_DIR=~/src/libs/googletest
+export GTEST_DIR=~/<some-location>/libs/googletest
 
 mkdir ${GTEST_DIR}
 cd ${GTEST_DIR}
-git clone https://github.com/google/googletest.git .
+git clone https://github.com/google/googletest.git
 ```
 ## Run build
 ```
-mkdir build            # Create a directory to hold the build output.
+mkdir build             # Create a directory to hold the build output.
 cd build
-cmake ${GTEST_DIR}     # Generate native build scripts.
+cmake ..                # Generate native build scripts.
 # Or with testcases
-cmake -Dgtest_build_samples=ON -D CMAKE_C_COMPILER=gcc -D CMAKE_CXX_COMPILER=g++ ${GTEST_DIR}
+cmake -Dgtest_build_samples=ON -D CMAKE_C_COMPILER=gcc -D CMAKE_CXX_COMPILER=g++ ..
 # Compile
 cmake --build . --config Debug --target all -- -j 4
 ```
@@ -83,12 +83,13 @@ make
 ## Getting SWIG
 ### Download SWIG
 ```
-export SWIGVER=4.0.1
+export SWIGVER=4.2.1
 wget https://sourceforge.net/projects/swig/files/swig/swig-4.0.1/swig-${SWIGVER}.tar.gz
 ```
 ### Optionally clone SWIG
 ```
-git clone https://github.com/swig/swig.git .
+git clone https://github.com/swig/swig.git
+mv swig swig-${SWIGVER}
 ```
 ## Run Autogen
 ```
