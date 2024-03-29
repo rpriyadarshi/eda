@@ -45,7 +45,11 @@ CTestTestfile.cmake
 _deps
 build
 cmake-build*
-libs
+linux/libs
+linux/lib_paths.sh
+*/swig/pyutl.py
+*/swig/pyrack.py
+*/swig/pytmat.py
 
 # Python
 __pycache__
