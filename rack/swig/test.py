@@ -627,11 +627,11 @@ class SampleDesign(unittest.TestCase):
         print('verifyFlatTop')
 
         # Base names
-#         inst_1 = pyrack.clString('inst_1')
-#         inst_2 = pyrack.clString('inst_2')
-#         inst_3 = pyrack.clString('inst_3')
-#         inst_4 = pyrack.clString('inst_4')
-#         inst_5 = pyrack.clString('inst_5')
+#         inst_1 = pyrack.string('inst_1')
+#         inst_2 = pyrack.string('inst_2')
+#         inst_3 = pyrack.string('inst_3')
+#         inst_4 = pyrack.string('inst_4')
+#         inst_5 = pyrack.string('inst_5')
 
         # Hierarchical names
 #         im31 = pyrack.clMultiString(inst_3)
@@ -661,7 +661,7 @@ class SampleDesign(unittest.TestCase):
 #         i52 = nl.findInstance(im52, self._rack)
 #         self.assertIsInstance(i52, pyrack.clInstance)
 
-    _srack = pyrack.clString('rack')
+    _srack = pyrack.string('rack')
     _mrack = pyrack.clMultiString(_srack)
     _rack = pyrack.clRack(_mrack)
 

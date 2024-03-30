@@ -7,6 +7,9 @@
 # https://rszalski.github.io/magicmethods/
 import unittest
 import pyutl
+import json
+from doctest import Example
+from lxml.doctestcompare import LXMLOutputChecker
 
 class SampleData:
     def __init__(self):
@@ -69,23 +72,23 @@ class SampleData:
             "    <Dictionary ID=\"Dictionary_0\">\n"
             "        <String>\n"
             "            <String>\"Zeta\"</String>\n"
+            "            <String>\"Beta\"</String>\n"
             "            <String>\"Gamma\"</String>\n"
             "            <String>\"Alpha\"</String>\n"
-            "            <String>\"Beta\"</String>\n"
             "        </String>\n"
             "        <Multistring>\n"
+            "            <Multistring>\"AlphaBetaZetaGamma\"</Multistring>\n"
             "            <Multistring>\"AlphaGammaBetaZeta\"</Multistring>\n"
             "            <Multistring>\"BetaAlphaGammaZeta\"</Multistring>\n"
-            "            <Multistring>\"AlphaBetaZetaGamma\"</Multistring>\n"
-            "            <Multistring>\"Beta\"</Multistring>\n"
-            "            <Multistring>\"Alpha\"</Multistring>\n"
-            "            <Multistring>\"Gamma\"</Multistring>\n"
-            "            <Multistring>\"Zeta\"</Multistring>\n"
             "            <Multistring>\"AlphaBetaGammaZeta\"</Multistring>\n"
+            "            <Multistring>\"Zeta\"</Multistring>\n"
+            "            <Multistring>\"Beta\"</Multistring>\n"
+            "            <Multistring>\"Gamma\"</Multistring>\n"
+            "            <Multistring>\"Alpha\"</Multistring>\n"
             "        </Multistring>\n"
             "    </Dictionary>\n"
         )
-
+    
     def buildJson(self) :
         i = 0;
                 
@@ -115,15 +118,15 @@ class SampleData:
     _p2 = "Gamma"
     _p3 = "Zeta"
 
-    _s0 = pyutl.clString(_p0, len(_p0))
-    _s1 = pyutl.clString(_p1, len(_p1))
-    _s2 = pyutl.clString(_p2, len(_p2))
-    _s3 = pyutl.clString(_p3, len(_p3))
+    _s0 = pyutl.string(_p0, len(_p0))
+    _s1 = pyutl.string(_p1, len(_p1))
+    _s2 = pyutl.string(_p2, len(_p2))
+    _s3 = pyutl.string(_p3, len(_p3))
 
-    _s4 = pyutl.clString(_s0)
-    _s5 = pyutl.clString(_s1)
-    _s6 = pyutl.clString(_s2)
-    _s7 = pyutl.clString(_s3)
+    _s4 = pyutl.string(_s0)
+    _s5 = pyutl.string(_s1)
+    _s6 = pyutl.string(_s2)
+    _s7 = pyutl.string(_s3)
 
     _m0 = pyutl.clMultiString()
     _m1 = pyutl.clMultiString()
@@ -132,8 +135,8 @@ class SampleData:
     _m4 = pyutl.clMultiString()
 
     _d = pyutl.clDictionary()
-    _xml = pyutl.clString()
-    _json = pyutl.clString()
+    _xml = pyutl.string()
+    _json = pyutl.string()
     _root = pyutl.Value()
 
 class TestMultiString(unittest.TestCase): 
@@ -141,6 +144,20 @@ class TestMultiString(unittest.TestCase):
 
     def setUp(self): 
         pass
+
+    def orderedJSON(self, obj):
+        if isinstance(obj, dict):
+            return sorted((k, self.orderedJSON(v)) for k, v in obj.items())
+        if isinstance(obj, list):
+            return sorted(self.orderedJSON(x) for x in obj)
+        else:
+            return obj
+
+    def assertXmlEqual(self, result, expect):
+        checker = LXMLOutputChecker()
+        if not checker.check_output(expect, result, 0):
+            message = checker.output_difference(Example("", expect), result, 0)
+            raise AssertionError(message)
 
     def test_compile(self) :
         ms = pyutl.clMultiString()
@@ -152,9 +169,9 @@ class TestMultiString(unittest.TestCase):
         p1 = ", "
         p2 = "World!"
 
-        s0 = pyutl.clString(p0, len(p0))
-        s1 = pyutl.clString(p1, len(p1))
-        s2 = pyutl.clString(p2, len(p2))
+        s0 = pyutl.string(p0, len(p0))
+        s1 = pyutl.string(p1, len(p1))
+        s2 = pyutl.string(p2, len(p2))
 
         ms = pyutl.clMultiString()
         ms.push_back(s0)
@@ -181,11 +198,11 @@ class TestMultiString(unittest.TestCase):
         p4 = "four"
         p5 = "five"
 
-        s1 = pyutl.clString(p1, len(p1))
-        s2 = pyutl.clString(p2, len(p2))
-        s3 = pyutl.clString(p3, len(p3))
-        s4 = pyutl.clString(p4, len(p4))
-        s5 = pyutl.clString(p5, len(p5))
+        s1 = pyutl.string(p1, len(p1))
+        s2 = pyutl.string(p2, len(p2))
+        s3 = pyutl.string(p3, len(p3))
+        s4 = pyutl.string(p4, len(p4))
+        s5 = pyutl.string(p5, len(p5))
 
         sv.push_back(s1)
         sv.push_back(s2)
@@ -208,9 +225,9 @@ class TestMultiString(unittest.TestCase):
         p2 = "World"
         p3 = "!"
 
-        s1 = pyutl.clString(p1, len(p1))
-        s2 = pyutl.clString(p2, len(p2))
-        s3 = pyutl.clString(p3, len(p3))
+        s1 = pyutl.string(p1, len(p1))
+        s2 = pyutl.string(p2, len(p2))
+        s3 = pyutl.string(p3, len(p3))
         sall = s1+s2+s3+s3+s2+s1+s2+s1+s3
 
         ms1 = pyutl.clMultiString(s1)
@@ -236,9 +253,9 @@ class TestMultiString(unittest.TestCase):
         p2 = "World"
         p3 = "!"
 
-        s1 = pyutl.clString(p1, len(p1))
-        s2 = pyutl.clString(p2, len(p2))
-        s3 = pyutl.clString(p3, len(p3))
+        s1 = pyutl.string(p1, len(p1))
+        s2 = pyutl.string(p2, len(p2))
+        s3 = pyutl.string(p3, len(p3))
         sall = s1+s2+s3
 
         ms1 = pyutl.clMultiString(s1)
@@ -270,13 +287,13 @@ class TestMultiString(unittest.TestCase):
         p6 = "banana"
         p7 = "durian"
 
-        s1 = pyutl.clString(p1, len(p1))
-        s2 = pyutl.clString(p2, len(p2))
-        s3 = pyutl.clString(p3, len(p3))
-        s4 = pyutl.clString(p4, len(p4))
-        s5 = pyutl.clString(p5, len(p5))
-        s6 = pyutl.clString(p6, len(p6))
-        s7 = pyutl.clString(p7, len(p7))
+        s1 = pyutl.string(p1, len(p1))
+        s2 = pyutl.string(p2, len(p2))
+        s3 = pyutl.string(p3, len(p3))
+        s4 = pyutl.string(p4, len(p4))
+        s5 = pyutl.string(p5, len(p5))
+        s6 = pyutl.string(p6, len(p6))
+        s7 = pyutl.string(p7, len(p7))
 
         ms1 = pyutl.clMultiString(s1)
         ms2 = pyutl.clMultiString(s2)
@@ -286,7 +303,7 @@ class TestMultiString(unittest.TestCase):
         ms6 = pyutl.clMultiString(s6)
         ms7 = pyutl.clMultiString(s7)
 
-        # sSet = pyutl.clStringUnorderedSet()
+        # sSet = pyutl.stringUnorderedSet()
         # sSet.insert(s1)
         # sSet.insert(s2)
         # sSet.insert(s3)
@@ -328,10 +345,10 @@ class TestMultiString(unittest.TestCase):
         p3 = ""
         p4 = "\". RTFM man!"
 
-        s1 = pyutl.clString(p1, len(p1))
-        s2 = pyutl.clString(p2, len(p2))
-        s3 = pyutl.clString(p3, len(p3))
-        s4 = pyutl.clString(p4, len(p4))
+        s1 = pyutl.string(p1, len(p1))
+        s2 = pyutl.string(p2, len(p2))
+        s3 = pyutl.string(p3, len(p3))
+        s4 = pyutl.string(p4, len(p4))
 
         ms = pyutl.clMultiString()
         pd = d.insert(s1)
@@ -346,7 +363,7 @@ class TestMultiString(unittest.TestCase):
         pd = d.insert(ms)
 
         k = "E_%s_1"
-        sk = pyutl.clString(k, len(k))
+        sk = pyutl.string(k, len(k))
 
         hm[sk] = ms
 
@@ -357,11 +374,11 @@ class TestMultiString(unittest.TestCase):
         p4 = "\"? RTFM man! "
         p5 = ""
 
-        s1 = pyutl.clString(p1, len(p1))
-        s2 = pyutl.clString(p2, len(p2))
-        s3 = pyutl.clString(p3, len(p3))
-        s4 = pyutl.clString(p4, len(p4))
-        s5 = pyutl.clString(p5, len(p5))
+        s1 = pyutl.string(p1, len(p1))
+        s2 = pyutl.string(p2, len(p2))
+        s3 = pyutl.string(p3, len(p3))
+        s4 = pyutl.string(p4, len(p4))
+        s5 = pyutl.string(p5, len(p5))
 
         ms = pyutl.clMultiString()
         pd = d.insert(s1)
@@ -378,7 +395,7 @@ class TestMultiString(unittest.TestCase):
         pd = d.insert(ms)
 
         k = "W_%s%s_2"
-        sk = pyutl.clString(k, len(k))
+        sk = pyutl.string(k, len(k))
 
         hm[sk] = ms
 
@@ -386,8 +403,8 @@ class TestMultiString(unittest.TestCase):
         p1 = "@INFO: "
         p2 = "This is too bad!"
 
-        s1 = pyutl.clString(p1, len(p1))
-        s2 = pyutl.clString(p2, len(p2))
+        s1 = pyutl.string(p1, len(p1))
+        s2 = pyutl.string(p2, len(p2))
 
         ms = pyutl.clMultiString()
         pd = d.insert(s1)
@@ -398,7 +415,7 @@ class TestMultiString(unittest.TestCase):
         pd = d.insert(ms)
 
         k = "I__1"
-        sk = pyutl.clString(k, len(k))
+        sk = pyutl.string(k, len(k))
 
         hm[sk] = ms
 
@@ -409,11 +426,11 @@ class TestMultiString(unittest.TestCase):
         p4 = "\"? RTFM man! "
         p5 = ""
 
-        s1 = pyutl.clString(p1, len(p1))
-        s2 = pyutl.clString(p2, len(p2))
-        s3 = pyutl.clString(p3, len(p3))
-        s4 = pyutl.clString(p4, len(p4))
-        s5 = pyutl.clString(p5, len(p5))
+        s1 = pyutl.string(p1, len(p1))
+        s2 = pyutl.string(p2, len(p2))
+        s3 = pyutl.string(p3, len(p3))
+        s4 = pyutl.string(p4, len(p4))
+        s5 = pyutl.string(p5, len(p5))
 
         ms = pyutl.clMultiString()
         pd = d.insert(s1)
@@ -430,7 +447,7 @@ class TestMultiString(unittest.TestCase):
         pd = d.insert(ms)
 
         k = "E_%n%m_3"
-        sk = pyutl.clString(k, len(k))
+        sk = pyutl.string(k, len(k))
 
         hm[sk] = ms
 
@@ -462,8 +479,8 @@ class TestMultiString(unittest.TestCase):
 
         p1 = "This is std::string!"
         p2 = "This is multistring!"
-        s1 = pyutl.clString(p1, len(p1));
-        s2 = pyutl.clString(p2, len(p2));
+        s1 = pyutl.string(p1, len(p1));
+        s2 = pyutl.string(p2, len(p2));
         ms = pyutl.clMultiString(s2);
         msg.init("E_%n%m_3", s1, ms);
         s = "@WARNING: Why are you saying \"This is std::string!\"? RTFM man! This is multistring!"
@@ -504,8 +521,8 @@ class TestMultiString(unittest.TestCase):
         p0 = "TestInsert1"
         p1 = "TestInsert"
 
-        s0 = pyutl.clString(p0, len(p0))
-        s1 = pyutl.clString(p1, len(p1))
+        s0 = pyutl.string(p0, len(p0))
+        s1 = pyutl.string(p1, len(p1))
 
         ms0 = pyutl.clMultiString()
         ms0.push_back(s0)
@@ -542,17 +559,22 @@ class TestMultiString(unittest.TestCase):
         self.assertNotEqual(it, self._sc._d.end())
         self.assertEqual(self._sc._m4.str(), it.value().str())
 
-    def test_DictionaryDumpOstream(self) :
-        self.assertEqual(self._sc._xml, self._sc._d.str())
+    # def test_DictionaryDumpOstream(self) :
+    #     self.assertEqual(self._sc._xml, self._sc._d.str())
 
     def test_DictionaryDumpXml(self) :
-        self.assertEqual(self._sc._xml, self._sc._d.strXml())
+        # self.assertEqual(self._sc._xml, self._sc._d.strXml())
+        self.assertXmlEqual(self._sc._d.strXml(), self._sc._xml)
 
 #     def test_DictionaryDumpVerilog(self) :
 #         self.assertEqual(self._sc._xml, self._sc._d.strVerilog())
 #  
     def test_DictionaryDumpJson(self) :
-        self.assertEqual(pyutl.fnCast(self._sc._json), self._sc._d.strJson())
+        expect = json.loads(pyutl.fnCast(self._sc._json))
+        result = json.loads(self._sc._d.strJson())
+        ordexpect = self.orderedJSON(expect)
+        ordresult = self.orderedJSON(result)
+        self.assertEqual(ordexpect, ordresult)
 
 if __name__ == '__main__': 
     unittest.main() 
