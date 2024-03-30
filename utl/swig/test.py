@@ -559,8 +559,8 @@ class TestMultiString(unittest.TestCase):
         self.assertNotEqual(it, self._sc._d.end())
         self.assertEqual(self._sc._m4.str(), it.value().str())
 
-    # def test_DictionaryDumpOstream(self) :
-    #     self.assertEqual(self._sc._xml, self._sc._d.str())
+    def test_DictionaryDumpOstream(self) :
+        self.assertEqual(self._sc._xml, self._sc._d.str())
 
     def test_DictionaryDumpXml(self) :
         # self.assertEqual(self._sc._xml, self._sc._d.strXml())
