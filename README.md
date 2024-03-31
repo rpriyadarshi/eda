@@ -10,6 +10,58 @@ Simply download and compile along with your software systems. The software uses 
 3.	Latest releases
 4.	API references
 
+# Build Script
+There is a build script ```linux/build.sh``` that you may find useful. Here is how you can use it:
+```
+ This utility must be run from the directory which has CMakeLists.txt
+Usage:
+    -c|--config <Debug|Release>           Choose build config
+    -t|--target <getdep|                  Download all external dependancies
+                 googletest|              Compile googletest
+                 jsoncpp|                 Compile jsoncpp
+                 swig|                    Compile swig
+                 genscript|               Generate path script
+                 generate|                cmake generate for the main product
+                 compile|                 Compile main product
+                 clean>                   Clean main product
+    -j|--parallel <number>                Number of parallel compile jobs
+    -h|--help                             This help message
+Examples:
+    build.sh --config Debug --target getdep
+    build.sh --config Debug --target googletest
+    build.sh --config Debug --target jsoncpp
+    build.sh --config Debug --target swig
+    build.sh --config Debug --target genscript
+    build.sh --config Debug --target generate
+    build.sh --config Debug --target compile
+    build.sh --config Debug --target compile --parallel 4
+    build.sh -c Debug -t compile -j 4
+    build.sh --config Debug --target clean
+```
+## Option ```--config```
+You can specify either ```Debug``` or ```Release``` to compile in these modes. This applies to all compile options that are cmake based.
+## Option ```--target```
+### Value ```getdep```
+This option downloads all the dependencies in ```linux/libs```. This does not compile anything.
+### Value ```googletest```
+Runs compile on googletest, using Debug/Release config.
+### Value ```jsoncpp```
+Runs compile on jsoncpp, using Debug/Release config.
+### Value ```swig```
+Runs compile on swig, using using its own gnu config.
+### Value ```genscript```
+Generates a shell script that you can source to setup include and lib paths for compiles.
+### Value ```generate```
+Runs product cmake generate
+### Value ```compile```
+Runs product compile
+### Value ```clean```
+Cleans up the product build.
+## Option ```--parallel```
+Any numeric value after this option specifies how many parallel compiles are run.
+## Option ```--help```
+Prints the help message
+
 # Build and Test
 ```
 cd linux
