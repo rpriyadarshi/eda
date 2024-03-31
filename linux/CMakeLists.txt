@@ -44,3 +44,15 @@ add_subdirectory(../tmat tmat)
 add_subdirectory(../sig sig)
 add_subdirectory(../algo algo)
 add_subdirectory(../rack rack)
+
+add_custom_target(unittests #ALL
+    COMMAND make run_pyrackpytest
+    COMMAND make run_pytmatpytest
+    COMMAND make run_pyutlpydebug
+    COMMAND make run_pyutlpytest
+    COMMAND make run_pyutltest
+    COMMAND make run_racktest
+    COMMAND make run_sigtest
+    COMMAND make run_tmattest
+    COMMAND make run_utltest
+)

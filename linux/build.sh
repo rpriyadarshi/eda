@@ -38,6 +38,7 @@ run_usage() {
     echo "                 genscript|               Generate path script"
     echo "                 generate|                cmake generate for the main product"
     echo "                 compile|                 Compile main product"
+    echo "                 unittests|               Run unit tests"
     echo "                 clean>                   Clean main product"
     echo "    -j|--parallel <number>                Number of parallel compile jobs"
     echo "    -h|--help                             This help message"
@@ -51,6 +52,7 @@ run_usage() {
     echo "    ${PROG} --config Debug --target compile"
     echo "    ${PROG} --config Debug --target compile --parallel 4"
     echo "    ${PROG} -c Debug -t compile -j 4"
+    echo "    ${PROG} --config Debug --target unittests"
     echo "    ${PROG} --config Debug --target clean"
 }
 
@@ -226,6 +228,8 @@ check_values() {
         GENERATE=1
     elif [ "${TARGET}" = "compile" ]; then
         COMPILE=1
+    elif [ "${TARGET}" = "unittests" ]; then
+        UNITTESTS=1
     elif [ "${TARGET}" = "clean" ]; then
         CLEAN=1
     else
@@ -259,6 +263,7 @@ dump_vars() {
     echo "GENSCRIPT=${GENSCRIPT}"
     echo "GENERATE=${GENERATE}"
     echo "COMPILE=${COMPILE}"
+    echo "UNITTESTS=${UNITTESTS}"
     echo "CLEAN=${CLEAN}"
     echo "CONFIG=${CONFIG}"
     echo "TARGET=${TARGET}"
@@ -321,6 +326,9 @@ run_func() {
     elif [ ${COMPILE} -eq 1 ]; then
         set_compile_paths
         run_compile ${CONFIG} ${COMPILENAME} ${PARALLEL}
+    elif [ ${UNITTESTS} -eq 1 ]; then
+        set_compile_paths
+        run_compile ${CONFIG} ${UNITTESTSNAME} ${PARALLEL}
     elif [ ${CLEAN} -eq 1 ]; then
         run_clean ${CONFIG} ${CLEANNAME}
     fi
@@ -347,6 +355,7 @@ SWIG=0
 GENSCRIPT=0
 GENERATE=0
 COMPILE=0
+UNITTESTS=0
 CLEAN=0
 CONFIG=""
 TARGET=""
@@ -355,6 +364,7 @@ HELP=0
 
 # cmake names
 COMPILENAME=all
+UNITTESTSNAME=unittests
 CLEANNAME=clean
 
 # Messaging, error etc.
