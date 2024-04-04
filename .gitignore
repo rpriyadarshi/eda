@@ -50,6 +50,7 @@ linux/lib_paths.sh
 */swig/pyutl.py
 */swig/pyrack.py
 */swig/pytmat.py
+*.bak
 
 # Python
 __pycache__
