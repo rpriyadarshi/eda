@@ -1,4 +1,4 @@
-# # IO ChatBot
+# # AI Artist
 
 # Here we have a chatbot where we have added the ability to call functions, now known as tools in OpenAI. Using the sample functions already implemented in DeepLearning.ai as template, several additional functions are implemmented.
 # 1.  ```write_file``` gives the ability to write a file that the LLM decides to write out.
@@ -327,7 +327,7 @@ class AIAssistant():
 ai = AIAssistant()
 
 # ### Serve the panel
-# panel serve IO-ChatBot.py --autoreload
+# panel serve ai_artist.py --autoreload
 
 # ### Sample Q&A with ChatBot
 # 1. Hi, my name is Rohit!
