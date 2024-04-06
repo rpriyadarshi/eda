@@ -51,6 +51,7 @@ linux/lib_paths.sh
 */swig/pyrack.py
 */swig/pytmat.py
 *.bak
+requirements.txt
 
 # Python
 __pycache__

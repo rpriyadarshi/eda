@@ -35,3 +35,8 @@ pip install --upgrade numexpr
 pip install --upgrade ctransformers
 pip install --upgrade mistralai
 pip install --upgrade plotly
+pip install --upgrade PySide6
+pip install --upgrade pyqt6
+pip install --upgrade requests
+pip install --upgrade fbs 
+pip install --upgrade PyInstaller==3.4

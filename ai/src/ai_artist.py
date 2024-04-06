@@ -53,11 +53,7 @@ from langchain.schema.agent import AgentFinish
 from langchain.agents.format_scratchpad import format_to_openai_functions
 from langchain.agents import AgentExecutor
 
-import panel as pn  # GUI
-pn.extension()
-from panel.chat import ChatInterface
 import param
-
 
 # ## Tools
 
@@ -238,10 +234,12 @@ def run_quartus_asm(project: str, result: str) -> str:
     return _run_subprocess(command, result)
 
 # ## Build ChatBot
-class cbfs(param.Parameterized):
+class AIArtist(param.Parameterized):
     
     def __init__(self, **params):
-        super(cbfs, self).__init__( **params)
+        super(AIArtist, self).__init__( **params)
+
+        self.title = 'Ai Artist'
         
         # Build tool list
         self.tools = self.get_tools()
@@ -311,23 +309,6 @@ class cbfs(param.Parameterized):
     def clr_history(self,count=0):
         self.chat_history = []
         return 
-
-# ## Create and render ChatBot
-class AIAssistant():
-
-    def __init__(self):
-        self.cb = cbfs()
-        chat_interface = pn.chat.ChatInterface(callback=self.callback, callback_user="AI Artist")
-        chat_interface.servable()
-
-    async def callback(self, query: str, user: str, instance: pn.chat.ChatInterface):
-        answer = self.cb.ask(query)
-        yield answer
-
-ai = AIAssistant()
-
-# ### Serve the panel
-# panel serve ai_artist.py --autoreload
 
 # ### Sample Q&A with ChatBot
 # 1. Hi, my name is Rohit!
