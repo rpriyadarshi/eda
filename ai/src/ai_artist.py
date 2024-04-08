@@ -33,6 +33,7 @@ import shlex
 import sys
 import subprocess
 from langchain_openai import OpenAI
+from openai import OpenAIError
 
 # ## Import libraries
 from langchain.tools import tool
@@ -302,8 +303,11 @@ class AIArtist(param.Parameterized):
                              handle_parsing_errors=True)
     
     def ask(self, query):
-        result = self.qa.invoke({"input": query})
-        self.answer = result['output']
+        try:
+            result = self.qa.invoke({"input": query})
+            self.answer = result['output']
+        except OpenAIError as error:
+            self.answer = (f"Error: {error}")
         return self.answer
     
     def clr_history(self,count=0):
@@ -337,8 +341,8 @@ class AIArtist(param.Parameterized):
                 <li>Do you know how to run Quartus Compile?</li>
                 <li>Can you list the steps in Quartus compile?</li>
                 <li>What is the current directory?</li>
-                <li>Please create a new directory called <b>./designs/dual_port_ram/runs/run_by_ai</b></li>
-                <li>Please change directory to <b>./designs/dual_port_ram/runs/run_by_ai</b>.</li>
+                <li>Please create a new directory called <b>../test/designs/dual_port_ram/runs/run_by_ai</b></li>
+                <li>Please change directory to <b>../test/designs/dual_port_ram/runs/run_by_ai</b>.</li>
                 <li>What is the current directory? Please list full path.</li>
                 <li>Please list the files in <b>../../project</b>.</li>
                 <li>Please copy quartus project file <b>../../project/dual_port_ram.qsf</b> to current directory.</li>

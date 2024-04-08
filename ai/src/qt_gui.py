@@ -46,7 +46,7 @@ class AIAssistant(QMainWindow):
         self.centralWidget.setUsesScrollButtons(True)
         self.centralWidget.setDocumentMode(True)
 
-        self.centralWidget.addTab(self.chatWidget, "AI Agent")
+        self.centralWidget.addTab(self.chatWidget, self.ai.title)
         self.centralWidget.addTab(self.generalTipsWidget, "General Tips")
         self.centralWidget.addTab(self.quartusTipsWidget, "Quartus Tips")
 
@@ -297,6 +297,7 @@ class AIAssistant(QMainWindow):
         self.chatInput.setPlaceholderText('Please ask any question!')
         self.sendButton = QPushButton('Send')
         self.sendButton.clicked.connect(self._sendMessage)
+        self.chatInput.returnPressed.connect(self.sendButton.click)
 
         self.chatLayout.addWidget(self.chatArea, 0, 0)
         self.chatLayout.addWidget(self.chatInput, 1, 0)
@@ -336,7 +337,9 @@ class AIAssistant(QMainWindow):
     def _sendMessage(self):
         query = self.chatInput.text().strip()
         self.chatArea.append(self._buildUserInput(query))
+        QApplication.setOverrideCursor(Qt.BusyCursor)
         response = self.ai.ask(query)
+        QApplication.restoreOverrideCursor()
         self.chatArea.append(self._buildAIResponse(response))
         self.chatInput.clear()
 
