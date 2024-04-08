@@ -52,6 +52,7 @@ linux/lib_paths.sh
 */swig/pytmat.py
 *.bak
 requirements.txt
+runs/
 
 # Python
 __pycache__
