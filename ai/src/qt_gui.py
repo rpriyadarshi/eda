@@ -6,7 +6,7 @@
 import sys
 from functools import partial
 
-from PySide6.QtWidgets import QApplication, QWidget, QTabWidget, QGridLayout, QLabel, QMainWindow, QTextEdit, QLineEdit, QPushButton, QMenuBar, QMenu, QToolBar, QSpinBox
+from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QTabWidget, QGridLayout, QLabel, QMainWindow, QTextEdit, QLineEdit, QPushButton, QMenuBar, QMenu, QToolBar, QSpinBox
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon, QAction, QKeySequence, QPalette, QColor
 
@@ -43,11 +43,12 @@ class AIAssistant(QMainWindow):
         self.centralWidget = QTabWidget()
         self.centralWidget.setTabPosition(QTabWidget.West)
         self.centralWidget.setMovable(True)
+        self.centralWidget.setUsesScrollButtons(True)
         self.centralWidget.setDocumentMode(True)
 
         self.centralWidget.addTab(self.chatWidget, "AI Agent")
-        # for n, color in enumerate(["red", "green", "blue", "yellow"]):
-        #     self.centralWidget.addTab(Color(color), color)
+        self.centralWidget.addTab(self.generalTipsWidget, "General Tips")
+        self.centralWidget.addTab(self.quartusTipsWidget, "Quartus Tips")
 
         self.setCentralWidget(self.centralWidget)
 
@@ -288,8 +289,12 @@ class AIAssistant(QMainWindow):
     def _buildChatArea(self):
         self.chatLayout = QGridLayout()
         self.chatArea = QTextEdit()
+        self.chatArea.setPlaceholderText('Here is where your chat will appear!')
         self.chatArea.setReadOnly(True)
         self.chatInput = QLineEdit()
+        self.chatInput.setClearButtonEnabled(True)
+        self.chatInput.setDragEnabled(True)
+        self.chatInput.setPlaceholderText('Please ask any question!')
         self.sendButton = QPushButton('Send')
         self.sendButton.clicked.connect(self._sendMessage)
 
@@ -299,6 +304,28 @@ class AIAssistant(QMainWindow):
 
         self.chatWidget = QWidget()
         self.chatWidget.setLayout(self.chatLayout)
+
+    def _buildGeneralTips(self):
+        self.generalTipsLayout = QVBoxLayout ()
+        self.generalTipsArea = QTextEdit()
+        self.generalTipsArea.setReadOnly(True)
+
+        self.generalTipsLayout.addWidget(self.generalTipsArea)
+
+        self.generalTipsWidget = QWidget()
+        self.generalTipsWidget.setLayout(self.generalTipsLayout)
+        self.generalTipsArea.setText(self.ai.general_tips())
+
+    def _buildQuartusTips(self):
+        self.quartusTipsLayout = QVBoxLayout ()
+        self.quartusTipsArea = QTextEdit()
+        self.quartusTipsArea.setReadOnly(True)
+
+        self.quartusTipsLayout.addWidget(self.quartusTipsArea)
+
+        self.quartusTipsWidget = QWidget()
+        self.quartusTipsWidget.setLayout(self.quartusTipsLayout)
+        self.quartusTipsArea.setText(self.ai.quartus_tips())
 
     def _buildUserInput(self, query):
         return f'<p><b>User:</b> {query}</p>'
@@ -316,6 +343,8 @@ class AIAssistant(QMainWindow):
     def _buildGui(self):
         self._setupMainWindow()
         self._buildChatArea()
+        self._buildGeneralTips()
+        self._buildQuartusTips()
         self._buildCentralWidget()
         self._createActions()
         self._createToolBars()

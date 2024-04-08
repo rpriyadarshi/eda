@@ -309,33 +309,40 @@ class AIArtist(param.Parameterized):
     def clr_history(self,count=0):
         self.chat_history = []
         return 
+    
+    def general_tips(self):
+        return """
+            <h1>Sample Q&A with AI Artist</h1>
+            <ol>
+                <li>Hi, my name is Rohit!</li>
+                <li>What's my name?</li>
+                <li>What tools do you have available?</li>
+                <li>Can you write files?</li>
+                <li>Generate a dual port RAM in verilog and write a file with the name <b>demo/dual_port_ram.v</b></li>
+                <li>Generate Quartus's qsf file with name <b>demo/dual_port_ram.qsf</b> with family Stratix 10 and top level as dual_port_ram</li>
+                <li>Run quartus synthesis with project as <b>demo/dual_port_ram</b></li>
+                <li>Run quartus fitter with project as <b>demo/dual_port_ram</b></li>
+                <li>Run quartus sta with project as <b>demo/dual_port_ram</b></li>
+                <li>Run quartus assembler with project as <b>demo/dual_port_ram</b></li>
+                <li>Write a unix script to find files matching a given pattern. Name the script as <b>demo/find_files.sh</b></li>
+                <li>Do you know what is a DSP?</li>
+                <li>Can you implement a DSP example using verilog and write it to a file <b>demo/dsp.v?</li>
+            </ol>
+        """
 
-# ### Sample Q&A with ChatBot
-# 1. Hi, my name is Rohit!
-# 2. What's my name?
-# 3. What's the weather in SF?
-# 4. What tools do you have available?
-# 5. call `create_your_own` tool with input "I love langchain" and return the result.
-# 6. Can you write files?
-# 7. Generate a dual port RAM in verilog and write a file with the name "demo/dual_port_ram.v"
-# 8. Generate Quartus's qsf file with name "demo/dual_port_ram.qsf" with family Stratix 10 and top level as dual_port_ram
-# 9. Run quartus synthesis with project as "demo/dual_port_ram"
-# 10. Run quartus fitter with project as "demo/dual_port_ram"
-# 11. Run quartus sta with project as "demo/dual_port_ram"
-# 12. Run quartus assembler with project as "demo/dual_port_ram"
-# 13. Write a unix script to find files matching a given pattern. Name the script as "demo/find_files.sh"
-# 14. Do you know what is a DSP?
-# 15. Can you implement a DSP example using verilog and write it to a file "demo/dsp.v"?
-# 
-
-# ### Try Quartus Compile
-# 1. Do you know how to run Quartus Compile?
-# 2. Can you list the steps in Quartus compile?
-# 3. What is the current directory?
-# 4. Please create a new directory called "./designs/dual_port_ram/runs/run_by_ai"
-# 5. Please change directory to "./designs/dual_port_ram/runs/run_by_ai".
-# 6. What is the current directory? Please list full path.
-# 7. Please list the files in "../../project".
-# 8. Please copy quartus project file "../../project/dual_port_ram.qsf" to current directory.
-# 9. Please list files in current directory.
-# 9. Please run Quartus compile on project dual_port_ram, listing each step as you are running them.
+    def quartus_tips(self):
+        return """
+            <h1>Try Quartus Compile</h1>
+            <ol>
+                <li>Do you know how to run Quartus Compile?</li>
+                <li>Can you list the steps in Quartus compile?</li>
+                <li>What is the current directory?</li>
+                <li>Please create a new directory called <b>./designs/dual_port_ram/runs/run_by_ai</b></li>
+                <li>Please change directory to <b>./designs/dual_port_ram/runs/run_by_ai</b>.</li>
+                <li>What is the current directory? Please list full path.</li>
+                <li>Please list the files in <b>../../project</b>.</li>
+                <li>Please copy quartus project file <b>../../project/dual_port_ram.qsf</b> to current directory.</li>
+                <li>Please list files in current directory.</li>
+                <li>Please run Quartus compile on project dual_port_ram, listing each step as you are running them.</li>
+            </ol>
+        """
