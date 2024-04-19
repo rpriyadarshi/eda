@@ -236,6 +236,7 @@ def run_quartus_asm(project: str, result: str) -> str:
 
 # ## Build ChatBot
 class AIArtist(param.Parameterized):
+    model_name = param.String(default="gpt-3.5-turbo", doc="Open AI model name")
     
     def __init__(self, **params):
         super(AIArtist, self).__init__( **params)
@@ -277,7 +278,7 @@ class AIArtist(param.Parameterized):
         return [convert_to_openai_function(f) for f in self.tools]
 
     def get_model(self):
-        return ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0).bind(functions=self.functions)
+        return ChatOpenAI(model_name=self.model_name, temperature=0).bind(functions=self.functions)
 
     def get_memory_buffer(self):
         return ConversationBufferMemory(return_messages=True,memory_key="chat_history")

@@ -29,7 +29,7 @@ class Color(QWidget):
 class AIAssistant(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ai = AIArtist()
+        self.ai = AIArtist(model_name="gpt-3.5-turbo")
 
         self.title = self.ai.title
         self.mainWidth = 1200
