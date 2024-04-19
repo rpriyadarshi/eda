@@ -22,6 +22,7 @@ pip install --upgrade openai
 pip install --upgrade langchain
 pip install --upgrade langchain-openai
 pip install --upgrade langchain_experimental
+pip install --upgrade langchain_community
 pip install --upgrade distribute
 pip install --upgrade xlrd
 pip install --upgrade openpyxl
@@ -39,4 +40,7 @@ pip install --upgrade PySide6
 pip install --upgrade pyqt6
 pip install --upgrade requests
 pip install --upgrade fbs 
-pip install --upgrade PyInstaller==3.4
+# pip install --upgrade PyInstaller==3.4
+# pip uninstall PyInstaller
+pip install --upgrade playwright
+pip install --upgrade html2text
