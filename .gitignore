@@ -53,6 +53,7 @@ linux/lib_paths.sh
 *.bak
 requirements.txt
 runs/
+chroma/
 
 # Python
 __pycache__

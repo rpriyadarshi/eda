@@ -44,3 +44,4 @@ pip install --upgrade fbs
 # pip uninstall PyInstaller
 pip install --upgrade playwright
 pip install --upgrade html2text
+pip install --upgrade bs4
