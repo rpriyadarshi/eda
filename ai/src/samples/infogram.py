@@ -3,38 +3,41 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import json
+import pprint
 
 original_url = "https://cawp.rutgers.edu/women-percentage-2020-candidates"
 r = requests.get(original_url)
 soup = BeautifulSoup(r.text, "html.parser")
 
-infogram_url = f'https://e.infogram.com/{soup.find("div",{"class":"infogram-embed"})["data-id"]}'
-r = requests.get(infogram_url)
-soup = BeautifulSoup(r.text, "html.parser")
+infograms = soup.find_all("div",{"class":"infogram-embed"})
+for infogram in infograms:
+    url = f'https://e.infogram.com/{infogram["data-id"]}'
+    r = requests.get(url)
+    soup = BeautifulSoup(r.text, "html.parser")
 
-script = [
-    t 
-    for t in soup.findAll("script") 
-    if "window.infographicData" in t.text
-][0].text
+    script = [
+        t 
+        for t in soup.findAll("script") 
+        if "window.infographicData" in t.text
+    ][0].text
 
-extract = re.search(r".*window\.infographicData=(.*);$", script)
+    extract = re.search(r".*window\.infographicData=(.*);$", script)
 
-data = json.loads(extract.group(1))
+    data = json.loads(extract.group(1))
 
-entities = data["elements"]["content"]["content"]["entities"]
+    entities = data["elements"]["content"]["content"]["entities"]
 
-tables = [
-    (entities[key]["props"]["chartData"]["sheetnames"], entities[key]["props"]["chartData"]["data"])
-    for key in entities.keys()
-    if ("props" in entities[key]) and ("chartData" in entities[key]["props"])
-]
+    tables = [
+        (entities[key]["props"]["chartData"]["sheetnames"], entities[key]["props"]["chartData"]["data"])
+        for key in entities.keys()
+        if ("props" in entities[key]) and ("chartData" in entities[key]["props"])
+    ]
 
-data = []
-for t in tables:
-    for i, sheet in enumerate(t[0]):
-        data.append({
-            "sheetName": sheet,
-            "table": dict([(t[1][i][0][j],t[1][i][1][j])  for j in range(len(t[1][i][0])) ])
-        })
-print(data)
+    data = []
+    for t in tables:
+        for i, sheet in enumerate(t[0]):
+            data.append({
+                "sheetName": sheet,
+                "table": dict([(t[1][i][0][j],t[1][i][1][j])  for j in range(len(t[1][i][0])) ])
+            })
+    pprint.pprint(data)
