@@ -81,3 +81,7 @@ The screenshots below illustrate a sample run of Ai Artist
 ![Quartus-Prime-Lite-Technology-Map-Viewer-Post-Mappint.png](./test/designs/dual_port_ram/images/Quartus-Prime-Lite-Technology-Map-Viewer-Post-Mappint.png)
 ### Technology mapper view post fit (P&R)
 ![Quartus-Prime-Lite-Technology-Map-Viewer-Post-Fitting.png](./test/designs/dual_port_ram/images/Quartus-Prime-Lite-Technology-Map-Viewer-Post-Fitting.png)
+
+# Web scraping
+https://pyimagesearch.com/2015/10/12/scraping-images-with-python-and-scrapy/
+https://docs.scrapy.org/en/latest/news.html#deprecation-removals

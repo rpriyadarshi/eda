@@ -45,3 +45,8 @@ pip install --upgrade fbs
 pip install --upgrade playwright
 pip install --upgrade html2text
 pip install --upgrade bs4
+pip install --upgrade pytesseract
+pip install --upgrade scrapy
+pip install --upgrade pillow
+pip install --upgrade jq
+pip install --upgrade selenium
