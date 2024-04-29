@@ -1,0 +1,2261 @@
+[
+  {
+    "product_name": "Laptops",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Laptops for 2024",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Computer Mice",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Wireless Mice for 2024",
+    "allowed_processors": "CPUs"
+  },
+  {
+    "product_name": "Keyboards",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Keyboards for 2024",
+    "allowed_processors": "CPUs"
+  },
+  {
+    "product_name": "Graphics Cards",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Graphics Cards for 4K Gaming in 2024",
+    "allowed_processors": "CPUs"
+  },
+  {
+    "product_name": "Processors",
+    "benchmark": 2024,
+    "benchmark_name": "The Best CPUs for Gaming in 2024",
+    "allowed_processors": "CPUs"
+  },
+  {
+    "product_name": "iPad Apps",
+    "benchmark": 2024,
+    "benchmark_name": "The Best iPad Games",
+    "allowed_processors": "Apple A14 Bionic, Apple M1 Pro, Apple M1 Max"
+  },
+  {
+    "product_name": "TVs",
+    "benchmark": 2024,
+    "benchmark_name": "The Best 65-Inch TVs",
+    "allowed_processors": "Samsung Neo QLED, LG OLED, Sony Bravia XR"
+  },
+  {
+    "product_name": "Projectors",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Portable Projectors",
+    "allowed_processors": "Epson, Optoma, Anker Nebula"
+  },
+  {
+    "product_name": "Digital Picture Frames",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Digital Picture Frames for 2024",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Heart Rate Monitors",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Heart Rate Monitors for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Smart Scales",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Smart Scales for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Medical Alert Systems",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Medical Alert Systems for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Gaming Hardware",
+    "benchmark": 2024,
+    "benchmark_name": "Steam Deck and Beyond: The Best Handheld Gaming Devices for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Gaming Hardware",
+    "benchmark": 2024,
+    "benchmark_name": "The Best SSDs for PS5 in 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Gaming Hardware",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Retro Gaming Consoles",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Gaming Systems",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Retro Handhelds",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Gaming Systems",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Nintendo Switch Accessories for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Gaming Systems",
+    "benchmark": 2024,
+    "benchmark_name": "Did You Score a Steam Deck? These are the Best SteamOS-Verified PC Games",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Gaming Controllers & Accessories",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Gaming Chairs for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Gaming Controllers & Accessories",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Office Chairs for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Gaming Controllers & Accessories",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Gaming Headsets for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Games",
+    "benchmark": 2024,
+    "benchmark_name": "Who Needs Windows? The 10 Best Mac Games for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Games",
+    "benchmark": 2023,
+    "benchmark_name": "From Mario to Spider-Man: The Best Video Games of 2023",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Games",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Video Game Subscription Services",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "PC Games",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Battle Royale Games for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "PC Games",
+    "benchmark": 2024,
+    "benchmark_name": "The Best RPGs for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "PC Games",
+    "benchmark": 2024,
+    "benchmark_name": "The Best PC Games for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Microsoft Xbox Games",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Xbox Series X Games for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Microsoft Xbox Games",
+    "benchmark": 0,
+    "benchmark_name": "The 7 Best RPG Maker Horror Games to Play this Halloween",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Microsoft Xbox Games",
+    "benchmark": 0,
+    "benchmark_name": "The Best Microsoft Xbox One Games",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Nintendo Games",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Nintendo Switch Games for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Nintendo Games",
+    "benchmark": 0,
+    "benchmark_name": "The Best Nintendo Switch Games for Kids",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Nintendo Games",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Nintendo Switch Lite Games for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Sony Playstation Games",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Sony PlayStation 5 Games for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Sony Playstation Games",
+    "benchmark": 0,
+    "benchmark_name": "The 7 Best RPG Maker Horror Games to Play this Halloween",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Sony Playstation Games",
+    "benchmark": 2022,
+    "benchmark_name": "The Best Sony PlayStation 4 Games for 2022",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Mobile Games",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Android Games for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Mobile Games",
+    "benchmark": 0,
+    "benchmark_name": "Stop Watching and Start Playing: The Best Netflix Games",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Mobile Games",
+    "benchmark": 2024,
+    "benchmark_name": "The 29 Best Apple Arcade Games for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Game Streaming Services",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Game Streaming Services for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Game Streaming Services",
+    "benchmark": 2024,
+    "benchmark_name": "Twitch and Beyond: The Best Video Game Live Streaming Services for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Artificial Intelligence (AI)",
+    "benchmark": 2024,
+    "benchmark_name": "The Best AI Chatbots for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Artificial Intelligence (AI)",
+    "benchmark": 0,
+    "benchmark_name": "The Best AI Tools for Taking Notes",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "AI Chatbots",
+    "benchmark": 2024,
+    "benchmark_name": "Best AI Chatbots",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "AI Tools",
+    "benchmark": 2024,
+    "benchmark_name": "Best AI Tools",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Operating Systems",
+    "benchmark": 2024,
+    "benchmark_name": "Best Operating Systems",
+    "allowed_processors": "Windows, macOS, Linux, ChromeOS"
+  },
+  {
+    "product_name": "Transcription Services",
+    "benchmark": 2024,
+    "benchmark_name": "Best Transcription Services",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Small Business CRM Software",
+    "benchmark": 2024,
+    "benchmark_name": "Best Small Business CRM Software",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Task Management Apps",
+    "benchmark": 2024,
+    "benchmark_name": "Best Task Management Apps",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Data Recovery Software",
+    "benchmark": 2024,
+    "benchmark_name": "Best Data Recovery Software",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Remote Access Software",
+    "benchmark": 2024,
+    "benchmark_name": "Best Remote Access Software",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Cloud Storage and File-Sharing Services",
+    "benchmark": 2024,
+    "benchmark_name": "Best Cloud Storage and File-Sharing Services",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Graphic Design Software",
+    "benchmark": 2024,
+    "benchmark_name": "Best Graphic Design Software",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Online Learning Services",
+    "benchmark": 2024,
+    "benchmark_name": "Best Online Learning Services",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Online Learning Services for Kids",
+    "benchmark": 2024,
+    "benchmark_name": "Best Online Learning Services for Kids",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Game Development Software",
+    "benchmark": 2024,
+    "benchmark_name": "Best Game Development Software",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Website Builders",
+    "benchmark": 2024,
+    "benchmark_name": "Best Website Builders",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Free Website Builders",
+    "benchmark": 2024,
+    "benchmark_name": "Best Free Website Builders",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Personal Finance Software",
+    "benchmark": 2024,
+    "benchmark_name": "Best Personal Finance Software",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Apps to Fix Finances",
+    "benchmark": 2024,
+    "benchmark_name": "Apps to Fix Finances",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Trading Apps",
+    "benchmark": 2024,
+    "benchmark_name": "Trading Apps",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Online Payroll Services",
+    "benchmark": 2024,
+    "benchmark_name": "Online Payroll Services",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Online Accounting Services for Freelancers",
+    "benchmark": 2024,
+    "benchmark_name": "Online Accounting Services for Freelancers",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Credit Card Readers",
+    "benchmark": 2016,
+    "benchmark_name": "Credit Card Readers",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Payment Solutions",
+    "benchmark": 2024,
+    "benchmark_name": "Payment Solutions",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "HR Software",
+    "benchmark": 2024,
+    "benchmark_name": "HR Software",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Employee Scheduling & Shift Planning Software",
+    "benchmark": 2024,
+    "benchmark_name": "Employee Scheduling & Shift Planning Software",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Live TV Streaming Services",
+    "benchmark": 2024,
+    "benchmark_name": "Live TV Streaming Services",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Sports Streaming Services",
+    "benchmark": 2024,
+    "benchmark_name": "Sports Streaming Services",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Video Streaming Services",
+    "benchmark": 2024,
+    "benchmark_name": "Video Streaming Services",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Music Streaming Services",
+    "benchmark": 2024,
+    "benchmark_name": "Music Streaming Services",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Dating Apps",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Streaming Music",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Android Music Apps",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Dating Apps",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Dating Apps for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Breakup Apps",
+    "benchmark": 2024,
+    "benchmark_name": "The 5 Best Breakup Apps for Soothing a Broken Heart",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Video Dating Apps",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Video Dating Apps for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Dog DNA Testing Kits",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Dog DNA Testing Kits for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "DNA Testing Kits",
+    "benchmark": 2024,
+    "benchmark_name": "The Best DNA Testing Kits for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Meal-Kit Delivery Services",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Meal-Kit Delivery Services for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Prepared Meal Delivery Services",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Prepared Meal Delivery Services for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Security Keys",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Security Keys for Multi-Factor Authentication",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Backup Software and Services",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Backup Software and Services for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Email Encryption Services",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Email Encryption Services for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Security Suites",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Security Suites for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Antivirus Software",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Antivirus Software for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Mac Antivirus Software",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Mac Antivirus Software for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Free Antivirus Software",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Free Antivirus Software for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "VPN Services",
+    "benchmark": 2024,
+    "benchmark_name": "The Best VPN Services for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Free VPNs",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Free VPNs for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "VPN for Canada",
+    "benchmark": 2024,
+    "benchmark_name": "The Best VPNs for Canada in 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Password Managers",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Password Managers for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Business Password Managers",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Business Password Managers for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Free Password Managers",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Free Password Managers for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Parental Control Software",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Parental Control Software for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Parental Control Apps",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Parental Control Apps for Your Phone",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Free Parental Control Apps",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Free Parental Control Apps for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Ransomware Protection",
+    "benchmark": 2024,
+    "benchmark_name": "The Best Ransomware Protection for 2024",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Samsung Galaxy Tab A9+",
+    "benchmark": 7,
+    "benchmark_name": "CPU, Graphics, and AI Performance",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "TCL Nxtpaper 11",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Amazon Fire HD 10 (2023)",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Lenovo Legion R45w-30",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "MSI MPG 321URX QD-OLED",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Asus ROG Swift OLED PG32UCDM",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Seagate Spider-Man Special Edition FireCuda External Hard Drive",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Seagate Grogu Special Edition FireCuda External Hard Drive",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "LaCie Mobile Drive (2022)",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Lexar Professional SL600 Portable SSD",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "ADATA SD810",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "TeamGroup T-Force Vulcan Z QLC",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "LatticeWork Amber X",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "TerraMaster F4-424",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Asustor Flashstor FS6706T",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Asus ROG Rapture GT-BE98 Pro",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Asus RT-AX57",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Ring Alarm Pro",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "TP-Link RE600X AX1800 Wi-Fi 6 Range Extender",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "TP-Link AX3000 Mesh Wi-Fi 6 Extender (RE715X)",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Rock Space AX1800 Wi-Fi 6 Range Extender (RSD0618)",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Arris Surfboard Max Mesh Wi-Fi 6E System",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Linksys Velop Pro 7 (3-Pack)",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Eero Max 7",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Canon Color imageClass MF753Cdw",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Brother MFC-L5915DW",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "xTool F1 Dual-Laser Engraver",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Creality Ender-3 S1 Plus",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "AnkerMake M5C 3D Printer",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Glowforge Aura",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Ricoh ScanSnap iX1600 Receipt Edition",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Epson RapidReceipt RR-400W",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Epson WorkForce ES-C320W",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Logitech MX Brio",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "HyperX Vision S",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Creative Live! Cam Sync 4K",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Contour Design SliderMouse Pro Wireless",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Contour Design RollerMouse Pro Wireless",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Corsair M75 Wireless Lightweight RGB Gaming Mouse",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Asus ROG Falchion RX Low Profile",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Cooler Master MK770 Macaron Hybrid Wireless Keyboard",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Asus ROG Falchion RX Low Profile",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Cooler Master MK770 Macaron Hybrid Wireless Keyboard",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "NZXT Function 2 Mini TKL",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "PowerColor Hellhound AMD Radeon RX 7900 GRE",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Nvidia GeForce RTX 4080 Super Founders Edition",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "XFX Speedster Quicksilver 309 Radeon RX 7600 XT",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Intel Core i9-14900KS",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Intel Core i5-13400F",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "AMD Ryzen 7 8700G",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "MSI B760M Edge Ti Wi-Fi",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Maxsun Challenger B650M Wi-Fi",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Biostar Z790 Valkyrie",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Asus ProArt PA602",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Enermax StarryKnight SK30 V2",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Thermaltake The Tower 300",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "G4 OLED TV",
+    "benchmark": 4,
+    "benchmark_name": "EVO G4 OLED TV",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Nomvdic P2000UST-RGB 4K UST Triple Laser TV Projector",
+    "benchmark": 0,
+    "benchmark_name": "P2000UST-RGB 4K UST Triple Laser TV Projector",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "AAXA P6 Ultimate",
+    "benchmark": 0,
+    "benchmark_name": "P6 Ultimate",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Optoma UHZ35ST",
+    "benchmark": 0,
+    "benchmark_name": "UHZ35ST",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Amazon Fire TV Stick Lite",
+    "benchmark": 0,
+    "benchmark_name": "Fire TV Stick Lite",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Amazon Fire TV Stick With Alexa Voice Remote (3rd Gen)",
+    "benchmark": 0,
+    "benchmark_name": "Fire TV Stick With Alexa Voice Remote (3rd Gen)",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Amazon Fire TV Stick 4K Max (2nd Gen, 2023)",
+    "benchmark": 0,
+    "benchmark_name": "Fire TV Stick 4K Max (2nd Gen, 2023)",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Beyerdynamic DT 770 Pro X LE",
+    "benchmark": 0,
+    "benchmark_name": "DT 770 Pro X LE",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Marshall Major V",
+    "benchmark": 0,
+    "benchmark_name": "Major V",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Nothing Ear (2024)",
+    "benchmark": 0,
+    "benchmark_name": "Ear (2024)",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Sony ULT Field 1",
+    "benchmark": 0,
+    "benchmark_name": "ULT Field 1",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Harman Kardon Aura Studio 4",
+    "benchmark": 0,
+    "benchmark_name": "Aura Studio 4",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Anker Soundcore Boom 2",
+    "benchmark": 0,
+    "benchmark_name": "Soundcore Boom 2",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Onyx Boox Palma",
+    "benchmark": 0,
+    "benchmark_name": "Boox Palma",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Onyx Boox Tab Ultra C Pro",
+    "benchmark": 0,
+    "benchmark_name": "Boox Tab Ultra C Pro",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Onyx Boox Note Air 3 C",
+    "benchmark": 0,
+    "benchmark_name": "Boox Note Air 3 C",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Insta360 X4",
+    "benchmark": 0,
+    "benchmark_name": "X4",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Fujifilm Instax Mini 99",
+    "benchmark": 0,
+    "benchmark_name": "Instax Mini 99",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Nikon Z f",
+    "benchmark": 0,
+    "benchmark_name": "Z f",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Sony FE 16-25mm F2.8 G",
+    "benchmark": 0,
+    "benchmark_name": "FE 16-25mm F2.8 G",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Canon RF-S 10-18mm F4.5-6.3 IS STM",
+    "benchmark": 0,
+    "benchmark_name": "RF-S 10-18mm F4.5-6.3 IS STM",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Canon RF 24-105mm F2.8 L IS USM Z",
+    "benchmark": 0,
+    "benchmark_name": "RF 24-105mm F2.8 L IS USM Z",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "DJI Mini 4 Pro",
+    "benchmark": 0,
+    "benchmark_name": "Mini 4 Pro",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "DJI Air 3",
+    "benchmark": 0,
+    "benchmark_name": "Air 3",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "DJI Mavic 3 Pro",
+    "benchmark": 0,
+    "benchmark_name": "Mavic 3 Pro",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Apple Vision Pro",
+    "benchmark": 0,
+    "benchmark_name": "Vision Pro",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Rokid Max",
+    "benchmark": 0,
+    "benchmark_name": "Max",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Angry Birds VR: Isle of Pigs",
+    "benchmark": 0,
+    "benchmark_name": "Isle of Pigs",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "2024 Porsche Taycan",
+    "benchmark": 0,
+    "benchmark_name": "Porsche Taycan",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Tesla Cybertruck",
+    "benchmark": 0,
+    "benchmark_name": "Cybertruck",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "2024 Mercedes-Benz EQE Sedan",
+    "benchmark": 0,
+    "benchmark_name": "Mercedes-Benz EQE Sedan",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Amazon Echo Auto",
+    "benchmark": 0,
+    "benchmark_name": "Echo Auto",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Vivint Car Guard",
+    "benchmark": 0,
+    "benchmark_name": "Car Guard",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Klashwerks Raven",
+    "benchmark": 0,
+    "benchmark_name": "Raven",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Lasko AR122 ThermaSmart Ceramic Tower Heater",
+    "benchmark": 0,
+    "benchmark_name": "AR122 ThermaSmart Ceramic Tower Heater",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Yale Smart Delivery Box",
+    "benchmark": 0,
+    "benchmark_name": "Smart Delivery Box",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Amazon Astro",
+    "benchmark": 0,
+    "benchmark_name": "Astro",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Abode iota All-In-One Security Kit",
+    "benchmark": 0,
+    "benchmark_name": "iota All-In-One Security Kit",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "ADT Command",
+    "benchmark": 0,
+    "benchmark_name": "Command",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "SimpliSafe Home Security System",
+    "benchmark": 0,
+    "benchmark_name": "Home Security System",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "SimpliSafe Wireless Outdoor Security Camera",
+    "benchmark": 0,
+    "benchmark_name": "Wireless Outdoor Security Camera",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "SimpliSafe Video Doorbell Pro",
+    "benchmark": 0,
+    "benchmark_name": "Video Doorbell Pro",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Ring Battery Doorbell Pro",
+    "benchmark": 0,
+    "benchmark_name": "Battery Doorbell Pro",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "iRobot Roomba j9+",
+    "benchmark": 0,
+    "benchmark_name": "Roomba j9+",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Dreame X30 Ultra",
+    "benchmark": 0,
+    "benchmark_name": "X30 Ultra",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "iRobot Roomba Combo j9+",
+    "benchmark": 0,
+    "benchmark_name": "Roomba Combo j9+",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Skylight Frame",
+    "benchmark": 0,
+    "benchmark_name": "Frame",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "iRobot Roomba Combo J9+",
+    "benchmark": 7,
+    "benchmark_name": "CPU, Graphics, and AI Performance",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Nanoleaf Essentials Matter BR30 Smart Bulb",
+    "benchmark": null,
+    "benchmark_name": "",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Aqara Smart Lock U100",
+    "benchmark": null,
+    "benchmark_name": "",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Eve Energy Outlet",
+    "benchmark": null,
+    "benchmark_name": "",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Sensi Touch 2 Smart Thermostat ST76",
+    "benchmark": null,
+    "benchmark_name": "",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "EcoFlow Blade Robotic Lawn Mower",
+    "benchmark": null,
+    "benchmark_name": "",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Rachio Smart Hose Timer Starter Kit",
+    "benchmark": null,
+    "benchmark_name": "",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Nautica Smart Eyewear Powered by Lucyd",
+    "benchmark": null,
+    "benchmark_name": "",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Garmin Lily 2",
+    "benchmark": null,
+    "benchmark_name": "",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Peloton Heart Rate Band",
+    "benchmark": null,
+    "benchmark_name": "",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "QardioBase X",
+    "benchmark": null,
+    "benchmark_name": "",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "HandsFree Health WellBe Medical Alert Watch Round",
+    "benchmark": null,
+    "benchmark_name": "",
+    "allowed_processors": ""
+  },
+  {
+    "product_name": "Smart Scales",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "WellBe Medical Alert Watch Round",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Samsung Galaxy 4 LTE Smartwatch With HealthAssist",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "MGMove Smartwatch",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Valve Steam Deck OLED",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Asus ROG Ally",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Razer Edge",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Atari The400 Mini",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Analogue Duo",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Sony PlayStation 5 Slim",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Anthros Chair",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Razer Iskur V2",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Secretlab Titan EVO Lite",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Star Wars: Battlefront Classic Collection",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Dragon's Dogma 2",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Penny's Big Breakaway",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Nightingale",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Football Manager 2024",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Lords of the Fallen",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Suicide Squad: Kill the Justice League",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Persona 3 Reload",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Nickelodeon All-Star Brawl 2",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Princess Peach: Showtime!",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Splatoon 3: Side Order",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Rise of the Ronin",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Unicorn Overlord",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Final Fantasy VII Rebirth",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Assassin\u2019s Creed Mirage",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Mighty Doom",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Marvel Snap",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Nvidia GeForce Now",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Shadow",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Xbox Game Pass Ultimate",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Jasper",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Rev",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Otter",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Google ChromeOS",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Apple macOS Sonoma",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Apple iPadOS 16",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Monday.com",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Obsidian",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Notion",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "ScreenPal",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "RemotePC",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "NexSnap",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Adobe InDesign",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Maya",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Houdini",
+    "benchmark": 0,
+    "benchmark_name": ""
+  },
+  {
+    "product_name": "Maya",
+    "benchmark": 7,
+    "benchmark_name": "CPU, Graphics, and AI Performance",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Houdini",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "GameMaker",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Quizlet",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "SitePoint",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Postach.io (beta)",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "MarsEdit 3 (for Mac)",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "GoHenry",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Greenlight",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Quicken Deluxe",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Zoho Books",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Lendio",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "NeatBooks",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Disney+",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Hulu",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Fandango at Home",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Tidal",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "SiriusXM Internet Radio",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Apple Music",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Feels",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Raw",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Tinder",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "23andMe",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "HomeDNA",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "MyHeritage DNA",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Balanced Bites Meal Delivery Service",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Veestro Meal Delivery Service",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Mosaic Meal Delivery Service",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Signal Private Messenger",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Cloaked",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Acronis Cyber Protect Home Office",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Quick Heal Total Security",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Quick Heal Internet Security",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Total Defense Ultimate Internet Security",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Avast One Basic for Mac",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Avast One Basic",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Quick Heal Total Security for Mac",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Avira Phantom VPN Pro",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "IPVanish VPN",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "PureVPN",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Enpass Password Manager",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Dashlane",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Bitwarden",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Qustodio",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Norton Family",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Kaspersky Safe Kids",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Data443 Ransomware Recovery Manager",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "NeuShield Data Sentinel",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Check Point ZoneAlarm Anti-Ransomware",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Laptops",
+    "benchmark": 7,
+    "benchmark_name": "Intel Core Ultra 7",
+    "allowed_processors": "Intel Core Ultra processors"
+  },
+  {
+    "product_name": "Desktop Computers",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "Tablets",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "Monitors",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "Hard Drives",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "SSDs",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "Network Attached Storage",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "Wi-Fi Routers",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "Wi-Fi Mesh Networking Systems",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "Printers",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "3D Printers",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "Scanners",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "Webcams",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Not specified"
+  },
+  {
+    "product_name": "Processors",
+    "benchmark": 7,
+    "benchmark_name": "Intel Core Ultra 7",
+    "allowed_processors": "Intel"
+  },
+  {
+    "product_name": "AirTag",
+    "benchmark": 7,
+    "benchmark_name": "Intel Core Ultra 7",
+    "allowed_processors": "Intel"
+  },
+  {
+    "product_name": "Amazon Kindle",
+    "benchmark": 6,
+    "benchmark_name": "Helpful Accessibility Features",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Fuji's Film Simulation Modes",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Canon Lens",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Drone",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Virtual Avatar",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Electric Cars",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Smart Doorbell",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Robot Vacuum",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Apple Watch Series 6",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Apple Watch Series 6",
+    "benchmark": 7,
+    "benchmark_name": "CPU, Graphics, and AI Performance",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Nintendo Games",
+    "benchmark": 7,
+    "benchmark_name": "CPU, Graphics, and AI Performance",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Sony Playstation Games",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "PlayStation Plus vs. PlayStation Stars",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Mobile Games",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Apple Arcade",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Fortnite on Android and iOS",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Marvel Snap",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Game Streaming Services",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "PC Games to iPhone or Android Device",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Xbox Cloud Gaming on Steam Deck",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "PlayStation 5 Games to All Devices",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Artificial Intelligence (AI)",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Dall-E 3 AI Art Generator",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "AI-Generated Video Footage Detection",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Neuralink Human Trials",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Operating Systems",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Screen Recording on Windows PC or Mac",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Remote Troubleshooting for Relative's Computer",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Running Windows Apps on Mac",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Combining PDF Files",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Unsubscribing From Unwanted Email",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Working From Home Tips",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Free DVD Rippers",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Monitoring CPU Temperature",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Updating Drivers in Windows",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Backing Up and Organizing Photos",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Better Selfies Tricks",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Photographing the Night Sky",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Free Apple Product Workshop",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Free Ivy League Courses",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Creating Separate Windows Account for School",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Creating a Blog",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Contributing to Apple Card Savings Account",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Apple Card Savings Account",
+    "benchmark": 7,
+    "benchmark_name": "CPU, Graphics, and AI Performance",
+    "allowed_processors": "Intel Core Ultra 7"
+  },
+  {
+    "product_name": "Intel Core Ultra 7",
+    "benchmark": 7,
+    "benchmark_name": "CPU, Graphics, and AI Performance",
+    "allowed_processors": "Intel"
+  },
+  {
+    "product_name": "Systems",
+    "benchmark": 7,
+    "benchmark_name": "Intel Core Ultra 7",
+    "allowed_processors": "AI-ready Core Ultra processors"
+  },
+  {
+    "product_name": "Intel Core Ultra 7",
+    "benchmark": 7,
+    "benchmark_name": "CPU, Graphics, and AI Performance",
+    "allowed_processors": "Core Ultra"
+  },
+  {
+    "product_name": "Intel Core Ultra 7",
+    "benchmark": 7,
+    "benchmark_name": "CPU, Graphics, and AI Performance",
+    "allowed_processors": "Intel"
+  },
+  {
+    "product_name": "Intel Core Ultra 7",
+    "benchmark": 7,
+    "benchmark_name": "CPU, Graphics, and AI Performance",
+    "allowed_processors": "Meteor Lake"
+  },
+  {
+    "product_name": "Meteor Lake",
+    "benchmark": 4,
+    "benchmark_name": "Intel 4",
+    "allowed_processors": "Intel Core Ultra 7 155H"
+  },
+  {
+    "product_name": "Foveros",
+    "benchmark": null,
+    "benchmark_name": null,
+    "allowed_processors": null
+  },
+  {
+    "product_name": "Acer Swift Go 14",
+    "benchmark": 155,
+    "benchmark_name": "Intel Core Ultra 7",
+    "allowed_processors": "Intel Core Ultra 7, Qualcomm Snapdragon Elite X Oryon, Intel Core i7-1360P, Intel Core i7-1255U, AMD Ryzen 7 7736U, Apple M2"
+  },
+  {
+    "product_name": "Intel Core Ultra 7 155H",
+    "benchmark": 1,
+    "benchmark_name": "UL\u2019s Procyon AI Inference",
+    "allowed_processors": "Intel, Qualcomm"
+  },
+  {
+    "product_name": "Intel Core Ultra 7",
+    "benchmark": 155,
+    "benchmark_name": "Core Ultra 7 155H",
+    "allowed_processors": "Intel Core Ultra"
+  },
+  {
+    "product_name": "Snapdragon X Plus Laptop CPUs",
+    "benchmark": 0,
+    "benchmark_name": "Early Benchmarks",
+    "allowed_processors": "Snapdragon X Plus"
+  },
+  {
+    "product_name": "Nvidia AI Chips",
+    "benchmark": 0,
+    "benchmark_name": "Shipping to China",
+    "allowed_processors": "Nvidia AI Chips"
+  },
+  {
+    "product_name": "AMD's Ryzen 8000 Pro Chips",
+    "benchmark": 0,
+    "benchmark_name": "AI to Business Laptops, Desktops",
+    "allowed_processors": "Ryzen 8000 Pro Chips"
+  },
+  {
+    "product_name": "Samsung",
+    "benchmark": 0,
+    "benchmark_name": "Build US Chip Factories",
+    "allowed_processors": "Samsung"
+  },
+  {
+    "product_name": "Eken",
+    "benchmark": 0,
+    "benchmark_name": "Security Issue Fix",
+    "allowed_processors": "Eken Video Doorbells"
+  },
+  {
+    "product_name": "Jeff Bezos",
+    "benchmark": 0,
+    "benchmark_name": "Destroying Text Messages",
+    "allowed_processors": "Jeff Bezos"
+  },
+  {
+    "product_name": "ISPs",
+    "benchmark": 0,
+    "benchmark_name": "Offer $15 Broadband",
+    "allowed_processors": "ISPs"
+  },
+  {
+    "product_name": "Acer Swift Go 14 laptop",
+    "benchmark": 7,
+    "benchmark_name": "Intel Core Ultra 7",
+    "allowed_processors": "CPU, Graphics, and AI"
+  },
+  {
+    "product_name": "Intel Core Ultra 7",
+    "benchmark": 7,
+    "benchmark_name": "CPU, Graphics, and AI Performance",
+    "allowed_processors": "Core Ultra processors"
+  }
+]
