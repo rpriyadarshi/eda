@@ -4,40 +4,66 @@ from bs4 import BeautifulSoup
 import re
 import json
 import pprint
+import param
 
-original_url = "https://cawp.rutgers.edu/women-percentage-2020-candidates"
-r = requests.get(original_url)
-soup = BeautifulSoup(r.text, "html.parser")
+class InfogramExtractor(param.Parameterized):
+    def __init__(self, **params):
+        super(InfogramExtractor, self).__init__( **params)
 
-infograms = soup.find_all("div",{"class":"infogram-embed"})
-for infogram in infograms:
-    url = f'https://e.infogram.com/{infogram["data-id"]}'
-    r = requests.get(url)
-    soup = BeautifulSoup(r.text, "html.parser")
+        self.data = {}
 
-    script = [
-        t 
-        for t in soup.findAll("script") 
-        if "window.infographicData" in t.text
-    ][0].text
+    def extract_tables(self, infogram):
+        infogram_url = f'https://e.infogram.com/{infogram["data-id"]}'
+        r = requests.get(infogram_url)
+        soup = BeautifulSoup(r.text, "html.parser")
 
-    extract = re.search(r".*window\.infographicData=(.*);$", script)
+        script = [
+            t 
+            for t in soup.findAll("script") 
+            if "window.infographicData" in t.text
+        ][0].text
 
-    data = json.loads(extract.group(1))
+        extract = re.search(r".*window\.infographicData=(.*);$", script)
+        data = json.loads(extract.group(1))
+        entities = data["elements"]["content"]["content"]["entities"]
 
-    entities = data["elements"]["content"]["content"]["entities"]
+        tables = [
+            (entities[key]["props"]["chartData"]["sheetnames"], entities[key]["props"]["chartData"]["data"])
+            for key in entities.keys()
+            if ("props" in entities[key]) and ("chartData" in entities[key]["props"])
+        ]
+        return infogram_url, tables
 
-    tables = [
-        (entities[key]["props"]["chartData"]["sheetnames"], entities[key]["props"]["chartData"]["data"])
-        for key in entities.keys()
-        if ("props" in entities[key]) and ("chartData" in entities[key]["props"])
-    ]
+    def extract_data(self, infogram_url, tables):
+        infogram_data = {}
+        for t in tables:
+            for i, sheet in enumerate(t[0]):
+                cols = []
+                i_len = len(t[1][i])
+                for j in range(i_len):
+                    j_len = len(t[1][i][j])
+                    rows = []
+                    for k in range(j_len):
+                        var = t[1][i][j][k]
+                        if type(var) == type({}):
+                            value = var["value"]
+                        else:
+                            value = var
+                        rows.append(value)
+                    cols.append(rows)
+                infogram_data[sheet] = cols
+        self.data[infogram_url] = infogram_data
 
-    data = []
-    for t in tables:
-        for i, sheet in enumerate(t[0]):
-            data.append({
-                "sheetName": sheet,
-                "table": dict([(t[1][i][0][j],t[1][i][1][j])  for j in range(len(t[1][i][0])) ])
-            })
-    pprint.pprint(data)
+    def extract(self, url):
+        r = requests.get(url)
+        soup = BeautifulSoup(r.text, "html.parser")
+
+        infograms = soup.find_all("div",{"class":"infogram-embed"})
+        for infogram in infograms:
+            infogram_url, tables = self.extract_tables(infogram)
+            self.extract_data(infogram_url, tables)
+
+ie = InfogramExtractor()
+ie.extract("https://cawp.rutgers.edu/women-percentage-2020-candidates")
+ie.extract("https://www.pcmag.com/news/meteor-lake-first-tests-intel-core-ultra-7-benched-for-cpu-graphics-and")
+print(ie.data)
