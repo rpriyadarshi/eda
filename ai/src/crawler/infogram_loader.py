@@ -7,6 +7,8 @@ import pprint
 import param
 
 class InfogramLoader(param.Parameterized):
+    urls = param.List(doc="Urls to process")
+
     def __init__(self, **params):
         super(InfogramLoader, self).__init__( **params)
 
@@ -54,8 +56,8 @@ class InfogramLoader(param.Parameterized):
                 infogram_data[sheet] = cols
         self.data[infogram_url] = infogram_data
 
-    def load(self, urls):
-        for url in urls:
+    def load(self):
+        for url in self.urls:
             r = requests.get(url)
             soup = BeautifulSoup(r.text, "html.parser")
 
@@ -66,6 +68,6 @@ class InfogramLoader(param.Parameterized):
 
 # urls = ["https://cawp.rutgers.edu/women-percentage-2020-candidates",
 #         "https://www.pcmag.com/news/meteor-lake-first-tests-intel-core-ultra-7-benched-for-cpu-graphics-and"]
-# ie = InfogramLoader()
-# ie.load(urls)
+# ie = InfogramLoader(urls=urls)
+# ie.load()
 # print(ie.data)
