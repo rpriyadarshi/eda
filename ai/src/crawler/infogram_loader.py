@@ -6,9 +6,9 @@ import json
 import pprint
 import param
 
-class InfogramExtractor(param.Parameterized):
+class InfogramLoader(param.Parameterized):
     def __init__(self, **params):
-        super(InfogramExtractor, self).__init__( **params)
+        super(InfogramLoader, self).__init__( **params)
 
         self.data = {}
 
@@ -54,16 +54,18 @@ class InfogramExtractor(param.Parameterized):
                 infogram_data[sheet] = cols
         self.data[infogram_url] = infogram_data
 
-    def extract(self, url):
-        r = requests.get(url)
-        soup = BeautifulSoup(r.text, "html.parser")
+    def load(self, urls):
+        for url in urls:
+            r = requests.get(url)
+            soup = BeautifulSoup(r.text, "html.parser")
 
-        infograms = soup.find_all("div",{"class":"infogram-embed"})
-        for infogram in infograms:
-            infogram_url, tables = self.extract_tables(infogram)
-            self.extract_data(infogram_url, tables)
+            infograms = soup.find_all("div",{"class":"infogram-embed"})
+            for infogram in infograms:
+                infogram_url, tables = self.extract_tables(infogram)
+                self.extract_data(infogram_url, tables)
 
-ie = InfogramExtractor()
-ie.extract("https://cawp.rutgers.edu/women-percentage-2020-candidates")
-ie.extract("https://www.pcmag.com/news/meteor-lake-first-tests-intel-core-ultra-7-benched-for-cpu-graphics-and")
-print(ie.data)
+# urls = ["https://cawp.rutgers.edu/women-percentage-2020-candidates",
+#         "https://www.pcmag.com/news/meteor-lake-first-tests-intel-core-ultra-7-benched-for-cpu-graphics-and"]
+# ie = InfogramLoader()
+# ie.load(urls)
+# print(ie.data)
