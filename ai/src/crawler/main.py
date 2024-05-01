@@ -12,11 +12,16 @@ The customer service query will be delimited with {delimiter} characters.
 Processor and CPU are used interchangebly.
 You must use the loaded document to answer queries.
 
-You must process all images you encounter to extract embedded text.
-You must process all videos to extract embedded text.
-You must process all audio embedded in videos to convert to text.
-You must process all audio files to convert to text.
-You must cycle through all overlapping images you encounter to extract embedded text.
+Following is a list of processors that must be found in the processors below
+
+Processor:
+    Intel Core Ultra 7 155H
+    Apple M2
+    Intel Core i7-1360P
+    AMD Ryzen 7 7736U
+    Intel Core i7-1255U
+    Qualcomm Snapdragon X Elite
+
 """
 
 # system1 = f"""
@@ -57,6 +62,7 @@ You must cycle through all overlapping images you encounter to extract embedded 
 #     Intel Core i7-1360P
 #     AMD Ryzen 7 7736U
 #     Intel Core i7-1255U
+#     Qualcomm Snapdragon X Elite
 
 # Allowed benchmarks:
 #     Cinebench 2024
@@ -91,10 +97,21 @@ htmldocs_path = ""
 #-------------------------------------------------------------------------------
 # Run queries
 #-------------------------------------------------------------------------------
+def query_help():
+    print("""
+Options:
+    exit, quit:   Exit the ai loop
+    extract:      Run the JSON extractor with supplied schema
+    htmldocs:     Debug dump of extracted html
+    documents:    Debug dump of extracted text from html
+    docs:         Split documents that will be pasted in ai context window
+    help:         This message
+    """)
+
 def run_queries(ac: AICrawler):
     query = ""
     while True:
-        query = input('Query: ')
+        query = input('crawler>: ')
         if query in ["exit", "quit"]:
             break
         elif query in ["extract"]:
@@ -106,6 +123,8 @@ def run_queries(ac: AICrawler):
             pprint.pprint(ac.documents)
         elif query in ["docs"]:
             pprint.pprint(ac.docs)
+        elif query in ["help"]:
+            query_help()
         else:
             result = ac.ask(query)
             # print(ac.chat_history)
@@ -113,13 +132,38 @@ def run_queries(ac: AICrawler):
             # print(ac.db_response)
             print(result)
 
+#-------------------------------------------------------------------------------
+# Run flow
+#-------------------------------------------------------------------------------
+def flow_help():
+    print("""
+Options:
+    exit, quit:   Exit the ai loop
+    crawler:      Run AI crawler
+    help:         This message
+    """)
+
+def run_flow():
+    query = ""
+    while True:
+        query = input('flow>: ')
+        if query in ["exit", "quit"]:
+            break
+        elif query in ["crawler"]:
+            ac = AICrawler(urls=urls, 
+                        model_name="gpt-3.5-turbo", 
+                        system=system0, 
+                        schema=schema, 
+                        htmldocs_path=htmldocs_path)
+            run_queries(ac)
+        elif query in ["help"]:
+            flow_help()
+
+#-------------------------------------------------------------------------------
+# Main et.el.
+#-------------------------------------------------------------------------------
 def main():
-    ac = AICrawler(urls=urls, 
-                   model_name="gpt-3.5-turbo", 
-                   system="", 
-                   schema=schema, 
-                   htmldocs_path=htmldocs_path)
-    run_queries(ac)
+    run_flow()
 
 if __name__ == "__main__":
     main()
