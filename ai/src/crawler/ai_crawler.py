@@ -24,6 +24,10 @@ from langchain.chains import create_extraction_chain
 from langchain_community.docstore.document import Document
 from langchain_community.document_loaders import JSONLoader
 from langchain_community.document_loaders.recursive_url_loader import RecursiveUrlLoader
+from langchain_community.document_loaders.merge import MergedDataLoader
+
+from langchain_community.document_loaders import BSHTMLLoader
+from infogram_loader import InfogramLoader
 
 class AICrawler(param.Parameterized):
     model_name = param.String(default="gpt-3.5-turbo", doc="Open AI model name")
@@ -96,10 +100,16 @@ class AICrawler(param.Parameterized):
             return_generated_question=True
         )
 
+    def load_infograms(self):
+        self.infogram_loader = InfogramLoader(urls=self.urls)
+        self.infogramdocs = self.infogram_loader.extract()
+
     def load_htmldocs(self):
         # load documents
         if not self.htmldocs_path:
-            loader = AsyncChromiumLoader(urls=self.urls)
+            loader_web = AsyncChromiumLoader(urls=self.urls)
+            loader_infogram = BSHTMLLoader(self.infogram_loader.infogram_cache)
+            loader = MergedDataLoader(loaders=[loader_web, loader_infogram])
             # loader = RecursiveUrlLoader(
             #     url=self.urls[0], max_depth=10
             # )
@@ -118,9 +128,8 @@ class AICrawler(param.Parameterized):
             self.htmldocs = loader.load()
 
     def transform_htmldocs(self):
-        # transformer = Html2TextTransformer()
-        # self.documents = transformer.transform_documents(self.htmldocs)
-        transformer = BeautifulSoupTransformer()
+        transformer = Html2TextTransformer()
+        # transformer = BeautifulSoupTransformer()
         self.documents = transformer.transform_documents(self.htmldocs)
 
     def split_document(self):
@@ -134,6 +143,7 @@ class AICrawler(param.Parameterized):
         return html_splitter.create_documents(self.htmldocs[0].page_content)
 
     def load_url(self):
+        self.load_infograms()
         self.load_htmldocs()
         self.transform_htmldocs()
         return self.split_document()

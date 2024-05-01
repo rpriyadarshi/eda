@@ -8,9 +8,11 @@ import pprint
 import param
 import pandas as pd
 
+from langchain_community.document_loaders import BSHTMLLoader
 
 class InfogramLoader(param.Parameterized):
     urls = param.List(doc="Urls to process")
+    infogram_cache = param.String(default="output/infograms.html", doc="Local infogram cache location")
 
     def __init__(self, **params):
         super(InfogramLoader, self).__init__( **params)
@@ -153,7 +155,11 @@ class InfogramLoader(param.Parameterized):
             html = self.get_tabdn().join([html, f'</table>'])
         return html
 
-    def load(self):
+    def write_html(self, path: str, htmldocs):
+        with open(path, "w") as f:
+            f.write(htmldocs)
+
+    def extract(self):
         for url in self.urls:
             r = requests.get(url)
             soup = BeautifulSoup(r.text, "html.parser")
@@ -162,10 +168,27 @@ class InfogramLoader(param.Parameterized):
             for infogram in infograms:
                 infogram_url, tables = self.extract_tables(infogram)
                 self.extract_data(infogram_url, tables)
-        return self.to_html()
+
+        self.html = self.to_html()
+        self.write_html(self.infogram_cache, self.html)
+
+    # def load(self):
+    #     self.extract()
+    #     loader = BSHTMLLoader(self.infogram_cache)
+    #     return loader.load()
+
+    # def lazy_load(self):
+    #     self.extract()
+    #     loader = BSHTMLLoader(self.infogram_cache)
+    #     return loader.lazy_load()
+
 
 # urls = ["https://cawp.rutgers.edu/women-percentage-2020-candidates",
 #         "https://www.pcmag.com/news/meteor-lake-first-tests-intel-core-ultra-7-benched-for-cpu-graphics-and"]
-# ie = InfogramLoader(urls=urls)
-# html = ie.load()
-# print(html)
+# infogram_cache = 'output/infograms.html'
+
+# ie = InfogramLoader(urls=urls, infogram_cache=infogram_cache)
+# ie.extract()
+# loader = BSHTMLLoader(infogram_cache)
+# data = loader.load()
+# print(data)
