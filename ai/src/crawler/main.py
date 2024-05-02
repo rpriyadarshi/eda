@@ -11,6 +11,37 @@ The customer service query will be delimited with {delimiter} characters.
 
 Processor and CPU are used interchangebly.
 You must use the loaded document to answer queries.
+
+product_name: is the name of product, like a laptop, examples are listed below
+benchmark: an integer value of the benchmark value or score
+benchmark_name: is the name of benchmark that were run to obtain benchmark score. Examples are listed below
+allowed_processors: is a processor or CPU. The examples are listed below
+
+Product examples:
+    Acer Swift Go 14
+    Apple MacBook Air 15-inch
+    Framework 13 (2023)
+    HP Dragonfly Pro
+    Lenovo Yoga 9i Gen 8
+    Microsoft Surface Laptop 5 (15-Inch)
+    Qualcomm Snapdragon X Elite (Config A)
+    Qualcomm Snapdragon X Elite (Config B)
+
+Processor examples:
+    Intel Core Ultra 7 155H
+    Apple M2
+    Intel Core i7-1360P
+    AMD Ryzen 7 7736U
+    Intel Core i7-1255U
+    Qualcomm Snapdragon X Elite
+
+Benchmark examples:
+    Cinebench 2024
+    Cinebench R23
+    Geekbench 6.2
+    3DMark
+    GFXBench
+    PCMark 10
 """
 
 # system1 = f"""
@@ -141,6 +172,7 @@ def run_flow():
         elif query in ["crawler"]:
             ac = AICrawler(urls=urls, 
                         model_name="gpt-3.5-turbo", 
+                        delimiter=delimiter,
                         system=system0, 
                         schema=schema, 
                         htmldocs_path=htmldocs_path)
