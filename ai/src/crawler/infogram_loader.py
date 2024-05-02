@@ -13,10 +13,12 @@ from langchain_community.document_loaders import BSHTMLLoader
 class InfogramLoader(param.Parameterized):
     urls = param.List(doc="Urls to process")
     infogram_cache = param.String(default="output/infograms.html", doc="Local infogram cache location")
+    infogram_groups_cache = param.String(default="output/infogram_groups.html", doc="Local infogram groups cache location")
 
     def __init__(self, **params):
         super(InfogramLoader, self).__init__( **params)
 
+        self.infogram_groups = ""
         self.data = {}
         self.tab = 0
         self.tab_size = 2
@@ -35,6 +37,7 @@ class InfogramLoader(param.Parameterized):
         extract = re.search(r".*window\.infographicData=(.*);$", script)
         data = json.loads(extract.group(1))
         entities = data["elements"]["content"]["content"]["entities"]
+        self.infogram_groups = self.infogram_groups + extract.group(1)
 
         tables = [
             (entities[key]["props"]["chartData"]["sheetnames"], entities[key]["props"]["chartData"]["data"])
@@ -171,6 +174,7 @@ class InfogramLoader(param.Parameterized):
 
         self.html = self.to_html()
         self.write_html(self.infogram_cache, self.html)
+        self.write_html(self.infogram_groups_cache, self.infogram_groups)
 
     # def load(self):
     #     self.extract()
@@ -186,9 +190,10 @@ class InfogramLoader(param.Parameterized):
 # urls = ["https://cawp.rutgers.edu/women-percentage-2020-candidates",
 #         "https://www.pcmag.com/news/meteor-lake-first-tests-intel-core-ultra-7-benched-for-cpu-graphics-and"]
 # infogram_cache = 'output/infograms.html'
+# infogram_groups_cache = 'output/infogram_groups.html'
 
 # ie = InfogramLoader(urls=urls, infogram_cache=infogram_cache)
 # ie.extract()
-# loader = BSHTMLLoader(infogram_cache)
+# loader = BSHTMLLoader(infogram_groups_cache)
 # data = loader.load()
-# print(data)
+# # print(data)

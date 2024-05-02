@@ -11,17 +11,6 @@ The customer service query will be delimited with {delimiter} characters.
 
 Processor and CPU are used interchangebly.
 You must use the loaded document to answer queries.
-
-Following is a list of processors that must be found in the processors below
-
-Processor:
-    Intel Core Ultra 7 155H
-    Apple M2
-    Intel Core i7-1360P
-    AMD Ryzen 7 7736U
-    Intel Core i7-1255U
-    Qualcomm Snapdragon X Elite
-
 """
 
 # system1 = f"""
