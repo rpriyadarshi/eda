@@ -122,6 +122,7 @@ def query_help():
 Options:
     exit, quit:   Exit the ai loop
     extract:      Run the JSON extractor with supplied schema
+    structured:   Run the JSON extractor with typed in query
     htmldocs:     Debug dump of extracted html
     documents:    Debug dump of extracted text from html
     docs:         Split documents that will be pasted in ai context window
@@ -131,7 +132,7 @@ Options:
 def run_queries(ac: AICrawler):
     query = ""
     while True:
-        query = input('crawler>: ')
+        query = input('flow>crawler>: ')
         if query in ["exit", "quit"]:
             break
         elif query in ["extract"]:
@@ -145,6 +146,10 @@ def run_queries(ac: AICrawler):
             pprint.pprint(ac.docs)
         elif query in ["help"]:
             query_help()
+        elif query in ["structured"]:
+            structured = input('flow>crawler>structured>: ')
+            result = ac.ask_structured(structured)
+            print(result)
         else:
             result = ac.ask(query)
             # print(ac.chat_history)
@@ -188,3 +193,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Examples:
+# 1. extract all devices, their processors, their benchmarks, type of benchmark run with their scores in JSON format from loaded document

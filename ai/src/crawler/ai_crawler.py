@@ -1,4 +1,5 @@
 # https://python.langchain.com/docs/use_cases/web_scraping/
+# https://python.langchain.com/docs/modules/model_io/chat/structured_output/
 
 import requests
 import os
@@ -25,9 +26,28 @@ from langchain_community.docstore.document import Document
 from langchain_community.document_loaders import JSONLoader
 from langchain_community.document_loaders.recursive_url_loader import RecursiveUrlLoader
 from langchain_community.document_loaders.merge import MergedDataLoader
+from langchain_core.pydantic_v1 import BaseModel
 
 from langchain_community.document_loaders import BSHTMLLoader
 from infogram_loader import InfogramLoader
+
+class BenchmarkData(BaseModel):
+        """JSON schema of the expected output. 
+        product_name: is the name of product, like a laptop.
+        benchmark: an integer value of the benchmark value or score.
+        benchmark_name: is the name of benchmark that were run to obtain benchmark score.
+        allowed_processors: is a processor or CPU.
+        """
+        product_name: str
+        benchmark: int
+        benchmark_name: str
+        allowed_processors: list
+
+class StructuredData(BaseModel):
+        """JSON schema of the expected output. 
+        benchmark_data: is the list of all the benchmark data found.
+        """
+        benchmark_data: list
 
 class AICrawler(param.Parameterized):
     model_name = param.String(default="gpt-3.5-turbo", doc="Open AI model name")
@@ -53,8 +73,7 @@ class AICrawler(param.Parameterized):
         # Get OpenAI model
         self.model = self.get_model()
 
-        # # Prompt
-        # self.prompt = self.get_prompt()
+        self.structured_llm = self.get_structured_llm()
 
         # Get embeddings
         self.embeddings = self.get_embeddings()
@@ -71,6 +90,13 @@ class AICrawler(param.Parameterized):
 
     def get_model(self):
         return ChatOpenAI(model_name=self.model_name, temperature=0)
+
+    def get_structured_llm(self):
+        return self.model.with_structured_output(
+            # StructuredData,
+            method = "json_mode",
+            include_raw=True
+        )
 
     def get_embeddings(self):
         return OpenAIEmbeddings()
@@ -109,7 +135,7 @@ class AICrawler(param.Parameterized):
         if not self.htmldocs_path:
             loader_web = AsyncChromiumLoader(urls=self.urls)
             loader_infogram = BSHTMLLoader(self.infogram_loader.infogram_cache)
-            loader = MergedDataLoader(loaders=[loader_web, loader_infogram])
+            loader = MergedDataLoader(loaders=[loader_infogram])
             # loader = RecursiveUrlLoader(
             #     url=self.urls[0], max_depth=10
             # )
@@ -162,6 +188,16 @@ class AICrawler(param.Parameterized):
                 "question": f"{self.delimiter}{query}{self.delimiter}", 
                 "chat_history": self.chat_history}
 
+    def get_prompt_json(self, query):
+        # return f"""Here is the pretext: {self.system} 
+        return f"""Answer the following question. 
+        Make sure to return a JSON blob with keys shown here:
+        'product_name': is the name of product, like a laptop.
+        'benchmark': an integer value of the benchmark value or score.
+        'benchmark_name': is the name of benchmark that were run to obtain benchmark score.
+        'allowed_processors': is a processor or CPU.
+        {self.delimiter}{query}{self.delimiter}"""
+
     def ask(self, query):
         prompt = self.get_prompt(query)
         result = self.qa(prompt)
@@ -170,6 +206,18 @@ class AICrawler(param.Parameterized):
         self.chat_history.extend([(query, result["answer"])])
         self.db_query = result["generated_question"]
         self.db_response = result["source_documents"]
+        return self.answer
+
+    def ask_structured(self, query):
+        prompt = self.get_prompt_json(query)
+        result = self.structured_llm.invoke(prompt)
+
+        # self.answer = result['parsed'] 
+        # self.chat_history.extend([(query, result["parsed"])])
+        # self.db_query = result["generated_question"]
+        # self.db_response = result["source_documents"]
+        pprint.pprint(result)
+        self.answer = "*** WIP ***"
         return self.answer
 
     def clr_history(self, count=0):

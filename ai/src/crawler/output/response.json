@@ -1,0 +1,216 @@
+{
+    "devices": [
+        {
+            "name": "Acer Swift Go 14",
+            "processor": "Intel Core Ultra 7 155H",
+            "benchmarks": [
+                {
+                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "score": 12576
+                },
+                {
+                    "type": "Geekbench 6.2 Single-Core Setting",
+                    "score": 2366
+                },
+                {
+                    "type": "Geekbench 6.2 Multi-Core Setting",
+                    "score": 12193
+                },
+                {
+                    "type": "3DMark (Wild Life Extreme)",
+                    "score": 28
+                },
+                {
+                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "score": 191
+                },
+                {
+                    "type": "PCMark 10 Applications Test",
+                    "score": 12047
+                }
+            ]
+        },
+        {
+            "name": "Apple MacBook Air 15-inch",
+            "processor": "Apple M2",
+            "benchmarks": [
+                {
+                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "score": 8310
+                },
+                {
+                    "type": "Geekbench 6.2 Single-Core Setting",
+                    "score": 2645
+                },
+                {
+                    "type": "Geekbench 6.2 Multi-Core Setting",
+                    "score": 10102
+                },
+                {
+                    "type": "3DMark (Wild Life Extreme)",
+                    "score": 38
+                },
+                {
+                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "score": 289
+                }
+            ]
+        },
+        {
+            "name": "Framework 13 (2023)",
+            "processor": "Apple M2 (10-core)",
+            "benchmarks": [
+                {
+                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "score": 9623
+                },
+                {
+                    "type": "Geekbench 6.2 Single-Core Setting",
+                    "score": 2349
+                },
+                {
+                    "type": "Geekbench 6.2 Multi-Core Setting",
+                    "score": 10520
+                },
+                {
+                    "type": "3DMark (Wild Life Extreme)",
+                    "score": 21
+                },
+                {
+                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "score": 126
+                }
+            ]
+        },
+        {
+            "name": "HP Dragonfly Pro",
+            "processor": "AMD Ryzen 7 7736U",
+            "benchmarks": [
+                {
+                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "score": 9785
+                },
+                {
+                    "type": "Geekbench 6.2 Single-Core Setting",
+                    "score": 1340
+                },
+                {
+                    "type": "Geekbench 6.2 Multi-Core Setting",
+                    "score": 6265
+                },
+                {
+                    "type": "3DMark (Wild Life Extreme)",
+                    "score": 24
+                },
+                {
+                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "score": 147
+                }
+            ]
+        },
+        {
+            "name": "Lenovo Yoga 9i Gen 8",
+            "processor": "Intel Core i7-1360P Intel Iris Xe Graphics",
+            "benchmarks": [
+                {
+                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "score": 9576
+                },
+                {
+                    "type": "Geekbench 6.2 Single-Core Setting",
+                    "score": 2538
+                },
+                {
+                    "type": "Geekbench 6.2 Multi-Core Setting",
+                    "score": 11621
+                },
+                {
+                    "type": "3DMark (Wild Life Extreme)",
+                    "score": 24
+                },
+                {
+                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "score": 153
+                }
+            ]
+        },
+        {
+            "name": "Microsoft Surface Laptop 5 (15-Inch)",
+            "processor": "Intel Core i7-1255U Intel Iris Xe Graphics",
+            "benchmarks": [
+                {
+                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "score": 6960
+                },
+                {
+                    "type": "Geekbench 6.2 Single-Core Setting",
+                    "score": 2138
+                },
+                {
+                    "type": "Geekbench 6.2 Multi-Core Setting",
+                    "score": 8523
+                },
+                {
+                    "type": "3DMark (Wild Life Extreme)",
+                    "score": 21
+                },
+                {
+                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "score": 134
+                }
+            ]
+        },
+        {
+            "name": "Qualcomm Snapdragon X Elite Reference Design (Config A)",
+            "processor": "Qualcomm Snapdragon X Elite Qualcomm Adreno",
+            "benchmarks": [
+                {
+                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "score": 1229
+                },
+                {
+                    "type": "Geekbench 6.2 Single-Core Setting",
+                    "score": 2971
+                },
+                {
+                    "type": "Geekbench 6.2 Multi-Core Setting",
+                    "score": 15283
+                },
+                {
+                    "type": "3DMark (Wild Life Extreme)",
+                    "score": 45
+                },
+                {
+                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "score": 358
+                }
+            ]
+        },
+        {
+            "name": "Qualcomm Snapdragon X Elite Reference Design (Config B)",
+            "processor": "Qualcomm Snapdragon X Elite Qualcomm Adreno",
+            "benchmarks": [
+                {
+                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "score": 1010
+                },
+                {
+                    "type": "Geekbench 6.2 Single-Core Setting",
+                    "score": 2780
+                },
+                {
+                    "type": "Geekbench 6.2 Multi-Core Setting",
+                    "score": 14029
+                },
+                {
+                    "type": "3DMark (Wild Life Extreme)",
+                    "score": 39
+                },
+                {
+                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "score": 295
+                }
+            ]
+        }
+    ]
+}
