@@ -5,28 +5,34 @@
             "processor": "Intel Core Ultra 7 155H",
             "benchmarks": [
                 {
-                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "type": "Cinebench 2024",
+                    "score": {
+                        "single-core": 102,
+                        "multi-core": 0
+                    }
+                },
+                {
+                    "type": "Cinebench R23",
                     "score": 12576
                 },
                 {
-                    "type": "Geekbench 6.2 Single-Core Setting",
-                    "score": 2366
+                    "type": "Geekbench 6.2",
+                    "score": {
+                        "single-core": 2366,
+                        "multi-core": 12193
+                    }
                 },
                 {
-                    "type": "Geekbench 6.2 Multi-Core Setting",
-                    "score": 12193
+                    "type": "UL Procyon AI Inference Benchmark",
+                    "score": 215
                 },
                 {
                     "type": "3DMark (Wild Life Extreme)",
                     "score": 28
                 },
                 {
-                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "type": "GFXBench (Aztec Ruins Subtest)",
                     "score": 191
-                },
-                {
-                    "type": "PCMark 10 Applications Test",
-                    "score": 12047
                 }
             ]
         },
@@ -35,24 +41,22 @@
             "processor": "Apple M2",
             "benchmarks": [
                 {
-                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "type": "Cinebench 2024",
+                    "score": {
+                        "single-core": 121,
+                        "multi-core": 583
+                    }
+                },
+                {
+                    "type": "Cinebench R23",
                     "score": 8310
                 },
                 {
-                    "type": "Geekbench 6.2 Single-Core Setting",
-                    "score": 2645
-                },
-                {
-                    "type": "Geekbench 6.2 Multi-Core Setting",
-                    "score": 10102
-                },
-                {
-                    "type": "3DMark (Wild Life Extreme)",
-                    "score": 38
-                },
-                {
-                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
-                    "score": 289
+                    "type": "Geekbench 6.2",
+                    "score": {
+                        "single-core": 2645,
+                        "multi-core": 10102
+                    }
                 }
             ]
         },
@@ -61,23 +65,33 @@
             "processor": "Apple M2 (10-core)",
             "benchmarks": [
                 {
-                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "type": "Cinebench 2024",
+                    "score": {
+                        "single-core": 101,
+                        "multi-core": 607
+                    }
+                },
+                {
+                    "type": "Cinebench R23",
                     "score": 9623
                 },
                 {
-                    "type": "Geekbench 6.2 Single-Core Setting",
-                    "score": 2349
+                    "type": "Geekbench 6.2",
+                    "score": {
+                        "single-core": 2349,
+                        "multi-core": 10520
+                    }
                 },
                 {
-                    "type": "Geekbench 6.2 Multi-Core Setting",
-                    "score": 10520
+                    "type": "UL Procyon AI Inference Benchmark",
+                    "score": 75
                 },
                 {
                     "type": "3DMark (Wild Life Extreme)",
                     "score": 21
                 },
                 {
-                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "type": "GFXBench (Aztec Ruins Subtest)",
                     "score": 126
                 }
             ]
@@ -87,127 +101,153 @@
             "processor": "AMD Ryzen 7 7736U",
             "benchmarks": [
                 {
-                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "type": "Cinebench 2024",
+                    "score": {
+                        "single-core": 87,
+                        "multi-core": 603
+                    }
+                },
+                {
+                    "type": "Cinebench R23",
                     "score": 9785
                 },
                 {
-                    "type": "Geekbench 6.2 Single-Core Setting",
-                    "score": 1340
-                },
-                {
-                    "type": "Geekbench 6.2 Multi-Core Setting",
-                    "score": 6265
-                },
-                {
-                    "type": "3DMark (Wild Life Extreme)",
-                    "score": 24
-                },
-                {
-                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
-                    "score": 147
+                    "type": "Geekbench 6.2",
+                    "score": {
+                        "single-core": 1340,
+                        "multi-core": 6265
+                    }
                 }
             ]
         },
         {
             "name": "Lenovo Yoga 9i Gen 8",
-            "processor": "Intel Core i7-1360P Intel Iris Xe Graphics",
+            "processor": "Intel Core i7-1360P",
             "benchmarks": [
                 {
-                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "type": "Cinebench 2024",
+                    "score": {
+                        "single-core": 109,
+                        "multi-core": 520
+                    }
+                },
+                {
+                    "type": "Cinebench R23",
                     "score": 9576
                 },
                 {
-                    "type": "Geekbench 6.2 Single-Core Setting",
-                    "score": 2538
+                    "type": "Geekbench 6.2",
+                    "score": {
+                        "single-core": 2538,
+                        "multi-core": 11621
+                    }
                 },
                 {
-                    "type": "Geekbench 6.2 Multi-Core Setting",
-                    "score": 11621
+                    "type": "UL Procyon AI Inference Benchmark",
+                    "score": null
                 },
                 {
                     "type": "3DMark (Wild Life Extreme)",
                     "score": 24
                 },
                 {
-                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "type": "GFXBench (Aztec Ruins Subtest)",
                     "score": 153
                 }
             ]
         },
         {
             "name": "Microsoft Surface Laptop 5 (15-Inch)",
-            "processor": "Intel Core i7-1255U Intel Iris Xe Graphics",
+            "processor": "Intel Core i7-1255U",
             "benchmarks": [
                 {
-                    "type": "Cinebench R23 CPU (Multi-Core)",
+                    "type": "Cinebench 2024",
+                    "score": {
+                        "single-core": 96,
+                        "multi-core": 445
+                    }
+                },
+                {
+                    "type": "Cinebench R23",
                     "score": 6960
                 },
                 {
-                    "type": "Geekbench 6.2 Single-Core Setting",
-                    "score": 2138
-                },
-                {
-                    "type": "Geekbench 6.2 Multi-Core Setting",
-                    "score": 8523
-                },
-                {
-                    "type": "3DMark (Wild Life Extreme)",
-                    "score": 21
-                },
-                {
-                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
-                    "score": 134
+                    "type": "Geekbench 6.2",
+                    "score": {
+                        "single-core": 2138,
+                        "multi-core": 8523
+                    }
                 }
             ]
         },
         {
             "name": "Qualcomm Snapdragon X Elite Reference Design (Config A)",
-            "processor": "Qualcomm Snapdragon X Elite Qualcomm Adreno",
+            "processor": "Qualcomm Snapdragon X Elite",
             "benchmarks": [
                 {
-                    "type": "Cinebench R23 CPU (Multi-Core)",
-                    "score": 1229
+                    "type": "Cinebench 2024",
+                    "score": {
+                        "single-core": 132,
+                        "multi-core": 1229
+                    }
                 },
                 {
-                    "type": "Geekbench 6.2 Single-Core Setting",
-                    "score": 2971
+                    "type": "Cinebench R23",
+                    "score": null
                 },
                 {
-                    "type": "Geekbench 6.2 Multi-Core Setting",
-                    "score": 15283
+                    "type": "Geekbench 6.2",
+                    "score": {
+                        "single-core": 2971,
+                        "multi-core": 15283
+                    }
+                },
+                {
+                    "type": "UL Procyon AI Inference Benchmark",
+                    "score": 1766
                 },
                 {
                     "type": "3DMark (Wild Life Extreme)",
                     "score": 45
                 },
                 {
-                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "type": "GFXBench (Aztec Ruins Subtest)",
                     "score": 358
                 }
             ]
         },
         {
             "name": "Qualcomm Snapdragon X Elite Reference Design (Config B)",
-            "processor": "Qualcomm Snapdragon X Elite Qualcomm Adreno",
+            "processor": "Qualcomm Snapdragon X Elite",
             "benchmarks": [
                 {
-                    "type": "Cinebench R23 CPU (Multi-Core)",
-                    "score": 1010
+                    "type": "Cinebench 2024",
+                    "score": {
+                        "single-core": 125,
+                        "multi-core": 1010
+                    }
                 },
                 {
-                    "type": "Geekbench 6.2 Single-Core Setting",
-                    "score": 2780
+                    "type": "Cinebench R23",
+                    "score": null
                 },
                 {
-                    "type": "Geekbench 6.2 Multi-Core Setting",
-                    "score": 14029
+                    "type": "Geekbench 6.2",
+                    "score": {
+                        "single-core": 2780,
+                        "multi-core": 14029
+                    }
+                },
+                {
+                    "type": "UL Procyon AI Inference Benchmark",
+                    "score": 1792
                 },
                 {
                     "type": "3DMark (Wild Life Extreme)",
                     "score": 39
                 },
                 {
-                    "type": "GFXBench (Aztec Ruins Subtest) 1080p Aztec Ruins (Normal) Offscreen",
+                    "type": "GFXBench (Aztec Ruins Subtest)",
                     "score": 295
                 }
             ]

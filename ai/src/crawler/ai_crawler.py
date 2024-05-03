@@ -135,7 +135,7 @@ class AICrawler(param.Parameterized):
         if not self.htmldocs_path:
             loader_web = AsyncChromiumLoader(urls=self.urls)
             loader_infogram = BSHTMLLoader(self.infogram_loader.infogram_cache)
-            loader = MergedDataLoader(loaders=[loader_infogram])
+            loader = MergedDataLoader(loaders=[loader_web, loader_infogram])
             # loader = RecursiveUrlLoader(
             #     url=self.urls[0], max_depth=10
             # )
