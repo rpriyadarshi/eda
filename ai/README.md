@@ -43,6 +43,24 @@ Ai Artist is a chatbot that uses OpenAI in the background. It uses function call
    * [gen_tree.sh](./scripts/gen_tree.sh) &#8592; Generate this tree!
  * [README.md](./README.md)
 
+## Python setup
+- Install virtual env capability in python3 is it is missing:  
+```sudo apt install python3-venv```
+- Create a virtual env to work in:  
+```python3 -m venv venv/AI```
+- Activate the new virtual env:  
+```source venv/AI/bin/activate```
+- Deactivste virtual env:  
+```deactivate```
+- Get list of packages installed:  
+```pip list```
+- You can now install packages via the script:  
+```pip-install.sh```
+
+## References
+- [Python vs. Anaconda — What’s the Difference?](https://www.dataquest.io/blog/python-vs-anaconda/)  
+- [Python Land's virtual environment guide](https://python.land/virtual-environments/virtualenv)  
+
 # References
 * [How do I show the "up" and "down" arrow keyboard key in GitHub markdown?](https://stackoverflow.com/questions/54954544/how-do-i-show-the-up-and-down-arrow-keyboard-key-in-github-markdown)
 
