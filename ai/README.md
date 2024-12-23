@@ -4,6 +4,10 @@ Electronic Design Automation industry builds very complex software systems to ad
 This project is an effort towards automated flow generation using Generative AI using freely available tools like Intel's Quartus Prime, Vivado etc. Initially, FPGA EDA tools are a target to build a PoC. The learnings will be applied towards EDA tool flows for the ASIC industry. There is also a parallel effort to manage fine-grained flows deeply integrated within the EDA tools. What is not under consideration at the moment is actually tackle the algorithmic solvers as they are generally highly specialized and evolved for the problems being solved. 
 
 # Getting Started
+You can create new virtual environment:
+* ```python -m venv ~/venv/AI```
+You may need to load virtual python environment, e.g.,
+* ```. ./venv/AI/bin/activate```  
 The system is currently built around Quartus Prime Lite that is available at Intel's website at no charge. The source tree is shown next along with some explaination.
 * PyQt's resource compiler can be run as shown below: 
   * ```pyside6-rcc -o qrc_resources.py resources.qrc``` 

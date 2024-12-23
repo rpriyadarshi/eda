@@ -19,11 +19,11 @@ pip install --upgrade jupyter_bokeh
 pip install --upgrade matplotlib
 pip install --upgrade hvplot
 pip install --upgrade openai
-pip install --upgrade langchain
-pip install --upgrade langchain-openai
-pip install --upgrade langchain_experimental
-pip install --upgrade langchain_community
-pip install --upgrade distribute
+# pip install --upgrade langchain
+# pip install --upgrade langchain-openai
+# pip install --upgrade langchain_experimental
+# pip install --upgrade langchain_community
+# pip install --upgrade distribute
 pip install --upgrade xlrd
 pip install --upgrade openpyxl
 pip install --upgrade ipdb
@@ -50,3 +50,14 @@ pip install --upgrade scrapy
 pip install --upgrade pillow
 pip install --upgrade jq
 pip install --upgrade selenium
+pip install --upgrade numpy
+pip install --upgrade torch
+pip install --upgrade torchdata
+pip install --upgrade torchtext
+pip install --upgrade spacy
+pip install --upgrade altair
+pip install --upgrade jupytext
+pip install --upgrade flake8
+pip install --upgrade black
+pip install --upgrade GPUtil
+pip install --upgrade wandb
