@@ -33,39 +33,39 @@ namespace std {
         bitset();
         bitset(unsigned long __val);
 
-          // 23.3.5.2 bitset operations:
-        %newobject bitand;
-        %newobject bitor;
-        %newobject bitexp;
-        %newobject bitlshift;
-        %newobject bitrshift;
-        %newobject biteq;
-        %newobject bitneq;
+        // 23.3.5.2 bitset operations:
+        %newobject bit_and;
+        %newobject bit_or;
+        %newobject bit_exp;
+        %newobject bit_lshift;
+        %newobject bit_rshift;
+        %newobject bit_eq;
+        %newobject bit_neq;
         %extend {
-            bitset<_Nb>& bitand(const bitset<_Nb>& __rhs) {
+            bitset<_Nb>& bit_and(const bitset<_Nb>& __rhs) {
                 return *self &= __rhs;
             }
-            bitset<_Nb>& bitor(const bitset<_Nb>& __rhs) {
+            bitset<_Nb>& bit_or(const bitset<_Nb>& __rhs) {
                 return *self |= __rhs;
             }
-            bitset<_Nb>& bitexp(const bitset<_Nb>& __rhs) {
+            bitset<_Nb>& bit_exp(const bitset<_Nb>& __rhs) {
                 return *self ^= __rhs;
             }
-            bitset<_Nb>& bitlshift(size_t __pos) {
+            bitset<_Nb>& bit_lshift(size_t __pos) {
                 return *self <<= __pos;
             }
-            bitset<_Nb>& bitrshift(size_t __pos) {
+            bitset<_Nb>& bit_rshift(size_t __pos) {
                 return *self >>= __pos;
             }
-              bool biteq(const bitset<_Nb>& __rhs) const {
-                  return *self == __rhs;
-              }
-              bool bitneq(const bitset<_Nb>& __rhs) const {
-                  return *self != __rhs;
-              }
+            bool bit_eq(const bitset<_Nb>& __rhs) const {
+                return *self == __rhs;
+            }
+            bool bit_neq(const bitset<_Nb>& __rhs) const {
+                return *self != __rhs;
+            }
         }
         
-          // Set, reset, and flip.        
+        // Set, reset, and flip.        
         bitset<_Nb>& set();
         bitset<_Nb>& set(size_t __pos);
         bitset<_Nb>& set(size_t __pos, int __val);

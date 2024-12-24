@@ -39,20 +39,20 @@ TEST(compileTest, multistring)
 
     PySys_SetPath(std::filesystem::current_path().wstring().data());
 
-      PyObject* mod_name = PyUnicode_FromString("pyutl");
+    PyObject* mod_name = PyUnicode_FromString("pyutl");
     EXPECT_TRUE(mod_name != nullptr);
 
     PyObject* mod_ptr = PyImport_Import(mod_name);
     EXPECT_TRUE(mod_ptr != nullptr);
-      Py_DECREF(mod_name);
+    Py_DECREF(mod_name);
 
-      PyObject* dict_ptr = PyModule_GetDict(mod_ptr);
+    PyObject* dict_ptr = PyModule_GetDict(mod_ptr);
     EXPECT_TRUE(dict_ptr != nullptr);
-      Py_DECREF(mod_ptr);
+    Py_DECREF(mod_ptr);
 
-      PyObject* class_ptr = PyDict_GetItemString(dict_ptr, "clMultiString");
+    PyObject* class_ptr = PyDict_GetItemString(dict_ptr, "clMultiString");
     EXPECT_TRUE(class_ptr != nullptr);
-      Py_DECREF(dict_ptr);
+    Py_DECREF(dict_ptr);
 
     PyObject* obj_ptr = nullptr;
     if (PyCallable_Check(class_ptr)) {

@@ -117,7 +117,7 @@ Min(const _Tp v1, const _Tp v2)
 // Postconditions: returned the min of two values.
 //////////////////////////////////////////////////////////////////////
 template <typename _Tp>
-struct ptrless : public std::binary_function<_Tp, _Tp, bool> 
+struct ptrless 
 {
     bool operator()(const _Tp& x, const _Tp& y) const { return &x < &y; }
 };

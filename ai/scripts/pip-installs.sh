@@ -19,10 +19,10 @@ pip install --upgrade jupyter_bokeh
 pip install --upgrade matplotlib
 pip install --upgrade hvplot
 pip install --upgrade openai
-# pip install --upgrade langchain
-# pip install --upgrade langchain-openai
-# pip install --upgrade langchain_experimental
-# pip install --upgrade langchain_community
+pip install --upgrade langchain
+pip install --upgrade langchain-openai
+pip install --upgrade langchain_experimental
+pip install --upgrade langchain_community
 # pip install --upgrade distribute
 pip install --upgrade xlrd
 pip install --upgrade openpyxl

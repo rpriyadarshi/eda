@@ -25,6 +25,7 @@
 #include <assert.h>
 #include <bitset>
 #include <math.h>
+#include <cstdint>
 
 #include "common.h"
 #include "trm.h"

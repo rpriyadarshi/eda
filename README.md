@@ -27,16 +27,17 @@ Usage:
     -j|--parallel <number>                Number of parallel compile jobs
     -h|--help                             This help message
 Examples:
-    build.sh --config Debug --target getdep
-    build.sh --config Debug --target googletest
-    build.sh --config Debug --target jsoncpp
-    build.sh --config Debug --target swig
-    build.sh --config Debug --target genscript
-    build.sh --config Debug --target generate
-    build.sh --config Debug --target compile
-    build.sh --config Debug --target compile --parallel 4
-    build.sh -c Debug -t compile -j 4
-    build.sh --config Debug --target clean
+    ./build.sh --config Debug --target getdep
+    ./build.sh --config Debug --target googletest
+    ./build.sh --config Debug --target jsoncpp
+    ./build.sh --config Debug --target swig
+    ./build.sh --config Debug --target genscript
+    ./build.sh --config Debug --target generate
+    ./build.sh --config Debug --target compile
+    ./build.sh --config Debug --target compile --parallel 4
+    ./build.sh -c Debug -t compile -j 4
+    ./build.sh --config Debug --target unittests
+    ./build.sh --config Debug --target clean
 ```
 ## Option ```--config```
 You can specify either ```Debug``` or ```Release``` to compile in these modes. This applies to all compile options that are cmake based.
