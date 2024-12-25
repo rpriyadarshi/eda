@@ -29,7 +29,7 @@ project(algotest VERSION 1.0)
 # add the executable
 add_executable(algotest test.cpp)
 
-target_link_libraries(algotest pthread jsoncpp gtest gtest_main)
+target_link_libraries(algotest pthread jsoncpp_lib gtest gtest_main)
 
 target_include_directories(algotest PUBLIC
     ../../cmn/include

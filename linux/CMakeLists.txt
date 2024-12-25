@@ -37,48 +37,89 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_L
     message(FATAL_ERROR "GCC version is: ${CMAKE_CXX_COMPILER_VERSION}, need version >= 9.2.0")
 endif()
 
+# ---- Create 'libs' Subdirectory ----
+set(LIBS_DIR "${CMAKE_BINARY_DIR}/libs")
+file(MAKE_DIRECTORY ${LIBS_DIR})
+
 # ---- Dependencies ----
 # Enable FetchContent module
 include(FetchContent)
 
-# GoogleTest (Fetch latest from default branch)
+# GoogleTest
 FetchContent_Declare(
   googletest
   GIT_REPOSITORY https://github.com/google/googletest.git
-  GIT_TAG origin/main # Fetch latest from default branch
+  GIT_TAG origin/main
+  SOURCE_DIR ${LIBS_DIR}/googletest
+  BINARY_DIR ${LIBS_DIR}/googletest-build
 )
 FetchContent_MakeAvailable(googletest)
 
-# JSONCPP (Fetch latest from default branch)
+# JSONCPP
 FetchContent_Declare(
   jsoncpp
   GIT_REPOSITORY https://github.com/open-source-parsers/jsoncpp.git
-  GIT_TAG origin/master # Fetch latest from default branch
+  GIT_TAG origin/master
+  SOURCE_DIR ${LIBS_DIR}/jsoncpp
+  BINARY_DIR ${LIBS_DIR}/jsoncpp-build
 )
 FetchContent_MakeAvailable(jsoncpp)
 
 # SWIG
+FetchContent_Declare(
+  swig
+  GIT_REPOSITORY https://github.com/swig/swig.git
+  GIT_TAG origin/master
+  SOURCE_DIR ${LIBS_DIR}/swig-src
+  BINARY_DIR ${LIBS_DIR}/swig-build
+)
+
+FetchContent_GetProperties(swig)
+if(NOT swig_POPULATED)
+    FetchContent_Populate(swig)
+    message(STATUS "Building SWIG from ${swig_SOURCE_DIR}")
+    execute_process(
+        COMMAND cmake -S ${swig_SOURCE_DIR} -B ${swig_BINARY_DIR} -DCMAKE_INSTALL_PREFIX=${LIBS_DIR}/swig
+        RESULT_VARIABLE SWIG_CONFIGURE_RESULT
+    )
+    if(SWIG_CONFIGURE_RESULT)
+        message(FATAL_ERROR "SWIG configuration failed.")
+    endif()
+
+    execute_process(
+        COMMAND cmake --build ${swig_BINARY_DIR} --target install
+        RESULT_VARIABLE SWIG_BUILD_RESULT
+    )
+    if(SWIG_BUILD_RESULT)
+        message(FATAL_ERROR "SWIG build failed.")
+    endif()
+endif()
+
+# Validate SWIG Executable
+set(SWIG_EXECUTABLE "${LIBS_DIR}/swig/bin/swig")
+if(NOT EXISTS ${SWIG_EXECUTABLE})
+    message(FATAL_ERROR "SWIG executable not found at ${SWIG_EXECUTABLE}. Please check the SWIG build process.")
+endif()
+
+# Add SWIG to CMake search paths
+list(APPEND CMAKE_PREFIX_PATH "${LIBS_DIR}/swig")
 find_package(SWIG REQUIRED)
-include(${SWIG_USE_FILE})
+
+find_package(Python3 COMPONENTS Interpreter Development)
 
 # ---- Add Subdirectories ----
-# Add subdirectories for internal libraries
-add_subdirectory(../cmn cmn)    # Common utilities
-add_subdirectory(../stl stl)    # STL bindings
-add_subdirectory(../jsoncpp jsoncpp) # JSON library
-add_subdirectory(../utl utl)    # Utility functions
-add_subdirectory(../tmat tmat)  # TMAT module
-add_subdirectory(../sig sig)    # Signal handling
-add_subdirectory(../algo algo)  # Algorithm components
-add_subdirectory(../rack rack)  # Netlist and design handling
+add_subdirectory(../cmn cmn_build)
+add_subdirectory(../stl stl_build)
+add_subdirectory(../jsoncpp jsoncpp_build)
+add_subdirectory(../utl utl_build)
+add_subdirectory(../tmat tmat_build)
+add_subdirectory(../sig sig_build)
+add_subdirectory(../algo algo_build)
+add_subdirectory(../rack rack_build)
 
 # ---- Unit Tests ----
-# Define a custom target for unit tests
 enable_testing()
-
-add_custom_target(unittests
-    COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure
-)
+add_custom_target(unittests COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure)
 
 # Add individual test commands
 add_test(NAME run_pyrackpytest COMMAND make run_pyrackpytest)

@@ -32,7 +32,7 @@ project(${UNIT_TEST} VERSION 1.0)
 # add the executable
 add_executable(${UNIT_TEST} test.cpp)
 
-target_link_libraries(${UNIT_TEST} siglib pthread jsoncpp gtest gtest_main)
+target_link_libraries(${UNIT_TEST} siglib pthread jsoncpp_lib gtest gtest_main)
 
 target_include_directories(${UNIT_TEST} PUBLIC
     ../../cmn/include

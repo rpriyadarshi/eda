@@ -38,13 +38,7 @@ project(edaint VERSION 1.0
     LANGUAGES CXX)
 
 # Swig dependancy
-# https://cmake.org/cmake/help/latest/module/UseSWIG.html
-find_package(SWIG 4.0.1)
 include(${SWIG_USE_FILE})
-
-# Python dependancy
-# https://cmake.org/cmake/help/latest/module/FindPython3.html
-find_package(Python3 COMPONENTS Interpreter Development)
 
 set_property(SOURCE utl_int.i PROPERTY CPLUSPLUS ON)
 #set_property(SOURCE utl_int.i PROPERTY SWIG_FLAGS "-builtin")
@@ -58,6 +52,9 @@ swig_add_library(${LIB_NAME}
 
 target_include_directories(${LIB_NAME} PUBLIC
     ${Python3_INCLUDE_DIRS}
+    ${LIBS_DIR}/googletest/googletest/include
+    ${LIBS_DIR}/jsoncpp/include
+    ${LIBS_DIR}/swig-build/include
     ../../cmn/include
     ../../utl/include
     ../../stl/interface
@@ -69,7 +66,7 @@ target_include_directories(${LIB_NAME} PUBLIC
 set_property(TARGET ${LIB_NAME} PROPERTY SWIG_USE_TARGET_INCLUDE_DIRECTORIES ON)
 
 swig_link_libraries(${LIB_NAME} PUBLIC
-    jsoncpp
+    jsoncpp_lib
     ${Python3_LIBRARIES}
 )
 
