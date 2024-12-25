@@ -20,7 +20,7 @@ Usage:
                  googletest|              Compile googletest                 # Deprecated
                  jsoncpp|                 Compile jsoncpp                    # Deprecated
                  swig|                    Compile swig                       # Deprecated
-                 genscript|               Configure path script
+                 genscript|               Configure path script              # Deprecated
                  configure|               cmake configure for the main product
                  compile|                 Compile main product
                  unittests|               Run unit tests
@@ -32,7 +32,7 @@ Examples:
     ./build.sh --config Debug --target googletest # Deprecated
     ./build.sh --config Debug --target jsoncpp    # Deprecated
     ./build.sh --config Debug --target swig       # Deprecated
-    ./build.sh --config Debug --target genscript
+    ./build.sh --config Debug --target genscript  # Deprecated
     ./build.sh --config Debug --target configure
     ./build.sh --config Debug --target compile
     ./build.sh --config Debug --target compile --parallel 20
