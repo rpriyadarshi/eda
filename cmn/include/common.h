@@ -134,11 +134,17 @@ struct ptrless
 inline long
 DivLongLongRem(long long divs, long div, long *rem)
 {
+#ifdef USE_ASM_DIV
+    // Inline assembly version (for platforms supporting it)
     long dum2;
-      __asm__("divl %2":"=a"(dum2), "=d"(*rem)
-      :    "rm"(div), "A"(divs));
-
+    __asm__("divq %2" : "=a"(dum2), "=d"(*rem)
+                      : "rm"(div), "A"(divs));
     return dum2;
+#else
+    // Portable standard C++ version
+    *rem = divs % div;
+    return divs / div;
+#endif
 }
 
 //////////////////////////////////////////////////////////////////////

@@ -37,6 +37,20 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_L
     message(FATAL_ERROR "GCC version is: ${CMAKE_CXX_COMPILER_VERSION}, need version >= 9.2.0")
 endif()
 
+include(CheckCXXSourceCompiles)
+
+# Check if inline assembly is supported
+check_cxx_source_compiles("
+    int main() {
+        asm(\"divq %0\");
+        return 0;
+    }" USE_ASM_AVAILABLE)
+
+# Define the flag globally if supported
+if (USE_ASM_AVAILABLE)
+    add_definitions(-DUSE_ASM_DIV)
+endif()
+
 # ---- Create 'libs' Subdirectory ----
 set(LIBS_DIR "${CMAKE_BINARY_DIR}/libs")
 file(MAKE_DIRECTORY ${LIBS_DIR})
