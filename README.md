@@ -20,8 +20,8 @@ Usage:
                  googletest|              Compile googletest                 # Deprecated
                  jsoncpp|                 Compile jsoncpp                    # Deprecated
                  swig|                    Compile swig                       # Deprecated
-                 genscript|               Generate path script
-                 generate|                cmake generate for the main product
+                 genscript|               Configure path script
+                 configure|               cmake configure for the main product
                  compile|                 Compile main product
                  unittests|               Run unit tests
                  clean>                   Clean main product
@@ -33,10 +33,10 @@ Examples:
     ./build.sh --config Debug --target jsoncpp    # Deprecated
     ./build.sh --config Debug --target swig       # Deprecated
     ./build.sh --config Debug --target genscript
-    ./build.sh --config Debug --target generate
+    ./build.sh --config Debug --target configure
     ./build.sh --config Debug --target compile
-    ./build.sh --config Debug --target compile --parallel 4
-    ./build.sh -c Debug -t compile -j 4
+    ./build.sh --config Debug --target compile --parallel 20
+    ./build.sh -c Debug -t compile -j 20
     ./build.sh --config Debug --target unittests
     ./build.sh --config Debug --target clean
 ```

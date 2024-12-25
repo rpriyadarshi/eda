@@ -35,8 +35,8 @@ run_usage() {
     echo "                 googletest|              Compile googletest                 # Deprecated"
     echo "                 jsoncpp|                 Compile jsoncpp                    # Deprecated"
     echo "                 swig|                    Compile swig                       # Deprecated"
-    echo "                 genscript|               Generate path script"
-    echo "                 generate|                cmake generate for the main product"
+    echo "                 genscript|               Configure path script"
+    echo "                 configure|               cmake configure for the main product"
     echo "                 compile|                 Compile main product"
     echo "                 unittests|               Run unit tests"
     echo "                 clean>                   Clean main product"
@@ -48,10 +48,10 @@ run_usage() {
     echo "    ./${PROG} --config Debug --target jsoncpp    # Deprecated"
     echo "    ./${PROG} --config Debug --target swig       # Deprecated"
     echo "    ./${PROG} --config Debug --target genscript"
-    echo "    ./${PROG} --config Debug --target generate"
+    echo "    ./${PROG} --config Debug --target configure"
     echo "    ./${PROG} --config Debug --target compile"
-    echo "    ./${PROG} --config Debug --target compile --parallel 4"
-    echo "    ./${PROG} -c Debug -t compile -j 4"
+    echo "    ./${PROG} --config Debug --target compile --parallel 20"
+    echo "    ./${PROG} -c Debug -t compile -j 20"
     echo "    ./${PROG} --config Debug --target unittests"
     echo "    ./${PROG} --config Debug --target clean"
 }
@@ -93,7 +93,7 @@ build_googletest() {
     mkdir -p ${GTEST_DIR}/${BUILD_NAME}/${CONFIG}    # Create a directory to hold the build output.
     pushd ${GTEST_DIR}/${BUILD_NAME}/${CONFIG}
 
-    cmake ..                    # Generate native build scripts.
+    cmake ..                    # Configure native build scripts.
     # Or with testcases
     # cmake -Dgtest_build_samples=ON -D CMAKE_C_COMPILER=gcc -D CMAKE_CXX_COMPILER=g++ ..
     cmake -Dgtest_build_samples=ON ../..
@@ -135,7 +135,7 @@ build_swig() {
 ################################################################################
 # Run cmake generator
 ################################################################################
-run_generate() {
+run_configure() {
     rm -rf ${BUILD_NAME}
     mkdir -p ${BUILD_NAME}
     pushd ${BUILD_NAME}
@@ -224,8 +224,8 @@ check_values() {
         SWIG=1
     elif [ "${TARGET}" = "genscript" ]; then
         GENSCRIPT=1
-    elif [ "${TARGET}" = "generate" ]; then
-        GENERATE=1
+    elif [ "${TARGET}" = "configure" ]; then
+        CONFIGURE=1
     elif [ "${TARGET}" = "compile" ]; then
         COMPILE=1
     elif [ "${TARGET}" = "unittests" ]; then
@@ -261,7 +261,7 @@ dump_vars() {
     echo "JSONCPP=${JSONCPP}"
     echo "SWIG=${SWIG}"
     echo "GENSCRIPT=${GENSCRIPT}"
-    echo "GENERATE=${GENERATE}"
+    echo "CONFIGURE=${CONFIGURE}"
     echo "COMPILE=${COMPILE}"
     echo "UNITTESTS=${UNITTESTS}"
     echo "CLEAN=${CLEAN}"
@@ -282,7 +282,7 @@ set_compile_paths() {
 }
 
 ################################################################################
-# generate path script
+# configure path script
 ################################################################################
 run_genscript() {
     echo "Wrote script ${LIB_PATHS} that you can source to set paths."
@@ -320,9 +320,9 @@ run_func() {
         build_swig ${CONFIG}
     elif [ ${GENSCRIPT} -eq 1 ]; then
         run_genscript ${CONFIG}
-    elif [ ${GENERATE} -eq 1 ]; then
+    elif [ ${CONFIGURE} -eq 1 ]; then
         set_compile_paths
-        run_generate ${CONFIG}
+        run_configure ${CONFIG}
     elif [ ${COMPILE} -eq 1 ]; then
         set_compile_paths
         run_compile ${CONFIG} ${COMPILENAME} ${PARALLEL}
@@ -353,7 +353,7 @@ GOOGLETEST=0
 JSONCPP=0
 SWIG=0
 GENSCRIPT=0
-GENERATE=0
+CONFIGURE=0
 COMPILE=0
 UNITTESTS=0
 CLEAN=0
