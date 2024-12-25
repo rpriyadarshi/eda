@@ -108,14 +108,14 @@ find_package(SWIG REQUIRED)
 find_package(Python3 COMPONENTS Interpreter Development)
 
 # ---- Add Subdirectories ----
-add_subdirectory(../cmn cmn_build)
-add_subdirectory(../stl stl_build)
-add_subdirectory(../jsoncpp jsoncpp_build)
-add_subdirectory(../utl utl_build)
-add_subdirectory(../tmat tmat_build)
-add_subdirectory(../sig sig_build)
-add_subdirectory(../algo algo_build)
-add_subdirectory(../rack rack_build)
+add_subdirectory(cmn cmn_build)
+add_subdirectory(stl stl_build)
+add_subdirectory(jsoncpp jsoncpp_build)
+add_subdirectory(utl utl_build)
+add_subdirectory(tmat tmat_build)
+add_subdirectory(sig sig_build)
+add_subdirectory(algo algo_build)
+add_subdirectory(rack rack_build)
 
 # ---- Unit Tests ----
 enable_testing()
