@@ -119,7 +119,7 @@ endif()
 list(APPEND CMAKE_PREFIX_PATH "${LIBS_DIR}/swig")
 find_package(SWIG REQUIRED)
 
-find_package(Python3 COMPONENTS Interpreter Development)
+find_package(Python3 3.12 REQUIRED COMPONENTS Interpreter Development)
 
 # ---- Add Subdirectories ----
 add_subdirectory(cmn cmn_build)
