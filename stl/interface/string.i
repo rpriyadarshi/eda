@@ -28,9 +28,3 @@
 // The file stl/_string.h needs to be modified to move _Self to public section.
 %include <std_basic_string.i>
 %include <std_string.i>
-
-%define STR_TEMPLATE_CL_WRAP(prefix, _Tp, type)
-%template(prefix ## type ## String) std::basic_string<_Tp, std::char_traits<_Tp>, std::allocator<_Tp> >;
-%enddef
-
-STR_TEMPLATE_CL_WRAP(cl, char,);
