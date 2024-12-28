@@ -11,50 +11,30 @@ Simply download and compile along with your software systems. The software uses 
 4.	API references
 
 # Build Script
-There is a build script ```linux/build.sh``` that you may find useful. Dependencies have been added to cmake itself. Here is how you can use it:
+There is a build script ```scripts/build.sh``` that you may find useful. Dependencies have been added to cmake itself. Here is how you can use it:
 ```
  This utility must be run from the directory which has CMakeLists.txt
 Usage:
     -c|--config <Debug|Release>           Choose build config
-    -t|--target <getdep|                  Download all external dependancies # Deprecated
-                 googletest|              Compile googletest                 # Deprecated
-                 jsoncpp|                 Compile jsoncpp                    # Deprecated
-                 swig|                    Compile swig                       # Deprecated
-                 genscript|               Configure path script              # Deprecated
-                 configure|               cmake configure for the main product
+    -t|--target <configure|               cmake configure for the main product
                  compile|                 Compile main product
                  unittests|               Run unit tests
                  clean>                   Clean main product
     -j|--parallel <number>                Number of parallel compile jobs
     -h|--help                             This help message
 Examples:
-    ./build.sh --config Debug --target getdep     # Deprecated
-    ./build.sh --config Debug --target googletest # Deprecated
-    ./build.sh --config Debug --target jsoncpp    # Deprecated
-    ./build.sh --config Debug --target swig       # Deprecated
-    ./build.sh --config Debug --target genscript  # Deprecated
-    ./build.sh --config Debug --target configure
-    ./build.sh --config Debug --target compile
-    ./build.sh --config Debug --target compile --parallel 20
-    ./build.sh -c Debug -t compile -j 20
-    ./build.sh --config Debug --target unittests
-    ./build.sh --config Debug --target clean
+    build.sh --config Debug --target configure
+    build.sh --config Debug --target compile
+    build.sh --config Debug --target compile --parallel 20
+    build.sh -c Debug -t compile -j 20
+    build.sh --config Debug --target unittests
+    build.sh --config Debug --target clean
 ```
 ## Option ```--config```
 You can specify either ```Debug``` or ```Release``` to compile in these modes. This applies to all compile options that are cmake based.
 ## Option ```--target```
-### Value ```getdep```
-This option downloads all the dependencies in ```linux/libs```. This does not compile anything.
-### Value ```googletest```
-Runs compile on googletest, using Debug/Release config.
-### Value ```jsoncpp```
-Runs compile on jsoncpp, using Debug/Release config.
-### Value ```swig```
-Runs compile on swig, using using its own gnu config.
-### Value ```genscript```
-Generates a shell script that you can source to setup include and lib paths for compiles.
-### Value ```generate```
-Runs product cmake generate
+### Value ```configure```
+Runs product cmake configure
 ### Value ```compile```
 Runs product compile
 ### Value ```clean```
